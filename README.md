@@ -1,6 +1,6 @@
 # Guilherme dos Santos Braz — Portfólio
 
-**Técnico de Processos em Caldeiraria e Usinagem · Graduando em Engenharia Mecânica · Fundador da ROSTAG Soluções**
+**Técnico de Processos em Caldeiraria e Usinagem · Graduando em Engenharia Mecânica · Desenvolvedor de software industrial**
 
 Planejo a fabricação de equipamentos pesados para mineração e siderurgia, e construo as ferramentas de software que tornam esse planejamento mais rápido.
 
@@ -12,7 +12,7 @@ Planejo a fabricação de equipamentos pesados para mineração e siderurgia, e 
 
 Meu trabalho começa no desenho técnico e termina no chão de fábrica. Interpreto projetos de caldeiraria pesada, monto listas de materiais, detalho peças em CAD para programação de corte no Lantek, emito requisições de compra e ordens de produção e dou suporte técnico a caldeireiros, montadores e soldadores.
 
-No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar software. Assim nasceram as ferramentas deste portfólio, todas criadas a partir de problemas reais da produção. Pela ROSTAG Soluções também desenvolvo projetos mecânicos para clientes, do conceito ao cálculo estrutural.
+No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar software. Assim nasceram as ferramentas deste portfólio, todas criadas a partir de problemas reais da produção. De forma independente, também desenvolvo projetos mecânicos, do conceito ao cálculo estrutural.
 
 ## Experiência
 
@@ -20,7 +20,6 @@ No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar softwar
 |---|---|---|
 | jun/2025 – atual | Técnico de Processos — Caldeiraria e Usinagem | Sofir do Brasil Construções Industriais |
 | dez/2023 – mai/2025 | Auxiliar de Programação de Produção III → II (PCP) | Sofir do Brasil Construções Industriais |
-| 2026 – atual | Fundador | ROSTAG Soluções (MEI) |
 | ago/2022 – out/2022 | Auxiliar de Eletricista | SWE Engenharia Elétrica e Automação |
 | jul/2019 – jul/2021 | Aprendiz Industrial | Belgo Bekaert Arames |
 
@@ -32,7 +31,7 @@ No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar softwar
 ## Projetos de engenharia
 
 ### TC-2025-01 · Suporte articulado para condensadora
-Suporte de fachada que gira 180° em torno de um pivô central, alternando entre posição de trabalho e de manutenção, sem andaime nem trabalho em altura fora da estrutura.
+Projeto independente. Suporte de fachada que gira 180° em torno de um pivô central, alternando entre posição de trabalho e de manutenção, sem andaime nem trabalho em altura fora da estrutura.
 
 - Modelagem 3D e conjunto soldado no Inventor, com desenhos de fabricação em A3
 - Carga de vento pela NBR 6123 (140 km/h) nas duas orientações do equipamento
@@ -91,4 +90,4 @@ Aberto a oportunidades em engenharia de processos, PCP e soluções digitais par
 
 ---
 
-<sub>Telas e exemplos usam dados fictícios. © 2026 Guilherme dos Santos Braz · ROSTAG Soluções</sub>
+<sub>Telas e exemplos usam dados fictícios. © 2026 Guilherme dos Santos Braz</sub>
