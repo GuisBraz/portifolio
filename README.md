@@ -63,7 +63,7 @@ Calcula o melhor aproveitamento de barras e perfis (First-Fit Decreasing), contr
 Aberto a oportunidades em engenharia de processos, PCP e soluções digitais para a indústria.
 
 - [LinkedIn](https://www.linkedin.com/in/guilherme-santos-66b8162a0)
-- E-mail: [SEU E-MAIL]
+- E-mail: guisbraz4@gmail.com
 
 ---
 
