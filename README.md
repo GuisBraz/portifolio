@@ -56,8 +56,7 @@ Calcula o melhor aproveitamento de barras e perfis (First-Fit Decreasing), contr
 | Área | Ferramentas |
 |---|---|
 | Engenharia / CAD | Autodesk Inventor (análise de tensões), AutoCAD 2D/3D, Lantek |
-| Gestão industrial | TOTVS Protheus, Excel / VBA |
-| Desenvolvimento | Python, JavaScript, React, Firebase, Supabase, Vercel |
+| Gestão industrial | TOTVS Protheus, Excel |
 
 ## Contato
 
