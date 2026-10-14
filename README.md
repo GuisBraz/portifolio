@@ -1,8 +1,8 @@
 # Guilherme dos Santos Braz — Portfólio
 
-**Técnico de Processos em Caldeiraria e Usinagem · Graduando em Engenharia Mecânica · Desenvolvedor de software industrial**
+**Técnico de Processos em Caldeiraria e Usinagem · Graduando em Engenharia Mecânica
 
-Planejo a fabricação de equipamentos pesados para mineração e siderurgia, e construo as ferramentas de software que tornam esse planejamento mais rápido.
+Planejo a fabricação de equipamentos pesados para mineração e siderurgia.
 
 [LinkedIn](https://www.linkedin.com/in/guilherme-santos-66b8162a0) · [GitHub](https://github.com/GuisBraz) · Contagem, MG
 
