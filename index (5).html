@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guilherme Braz — Portfólio</title>
+<meta name="description" content="Portfólio de Guilherme dos Santos Braz: técnico de processos em caldeiraria e usinagem, graduando em Engenharia Mecânica e desenvolvedor de software industrial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F4F7}
+a{color:#B4410E}a:hover{color:#8A3009}
+img{max-width:100%}
+/* palco 3D do suporte TC-2025-01 */
+.tc-stage{position:relative;min-height:520px;background:#E4E9EF;overflow:hidden;font-family:'IBM Plex Sans',system-ui,sans-serif}
+.tc-stage{align-self:start;position:sticky;top:16px;height:min(640px,calc(100vh - 32px))}
+@media (max-width:820px){.tc-stage{position:relative;top:auto;height:auto;align-self:stretch}}
+.tc-stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab;outline:none;touch-action:pan-y}
+.tc-stage canvas:active{cursor:grabbing}
+.tc-loading{position:absolute;inset:0;display:grid;place-items:center;color:#4A5A70;font-family:'IBM Plex Mono',monospace;font-size:13px}
+.tc-chip{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;background:#FFFFFF;color:#0E1B2C;font-size:13px;font-weight:500;padding:7px 12px 7px 10px;border:1px solid #D9DFE7;box-shadow:0 8px 22px -12px rgba(14,27,44,.35);white-space:nowrap;pointer-events:none;will-change:transform;transition:opacity .35s}
+.tc-chip::before{content:"";width:7px;height:7px;background:#F08A4B;flex:none}
+.tc-chip small{color:#4A5A70;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:400}
+.tc-ctrl{position:absolute;left:16px;right:16px;top:16px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;z-index:2}
+.tc-seg{display:inline-flex;flex-wrap:wrap;background:#FFFFFF;border:1px solid #C9D2DD;padding:3px}
+.tc-seg button{all:unset;cursor:pointer;min-height:38px;display:inline-flex;align-items:center;padding:0 14px;font-size:14px;font-weight:500;color:#4A5A70;transition:background .25s,color .25s}
+.tc-seg button:hover{color:#0E1B2C}
+.tc-seg button[aria-pressed="true"]{background:#0E1B2C;color:#FFFFFF}
+.tc-seg button:focus-visible{outline:2px solid #B4410E;outline-offset:2px}
+.tc-angle{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#26364B;background:rgba(255,255,255,.75);padding:6px 10px;font-variant-numeric:tabular-nums}
+.tc-angle b{color:#0E1B2C;font-weight:500}
+.tc-hint{position:absolute;right:14px;bottom:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A5A70;pointer-events:none}
+@media (max-width:560px){.tc-stage{min-height:440px}.tc-chip{font-size:11.5px;padding:5px 9px}.tc-chip small{display:none}.tc-seg button{padding:0 10px;font-size:13px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tc-seg button{transition:none}}
+
+</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0E1B2C; background: #F2F4F7; line-height: 1.55">
+
+<header style="background: #0E1B2C; color: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#topo" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid #F08A4B; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px">GB</span>
+<span style="font-weight: 600; font-size: 16px; letter-spacing: 0.02em">Guilherme Braz</span>
+</a>
+<nav aria-label="Seções" style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 15px">
+<a href="#sobre" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Sobre</a>
+<a href="#experiencia" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Experiência</a>
+<a href="#engenharia" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Engenharia</a>
+<a href="#projetos" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Software</a>
+<a href="#contato" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Contato</a>
+</nav>
+</div>
+</header>
+
+<section id="topo" style="background: #0E1B2C; color: #FFFFFF; border-bottom: 4px solid #F08A4B">
+<div style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 104px; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #F08A4B">Processos · Caldeiraria pesada · Software industrial</p>
+<h1 style="margin: 0; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.08; font-weight: 700; max-width: 900px">Planejo a fabricação de equipamentos pesados — e construo as ferramentas que tornam esse planejamento mais rápido.</h1>
+<p style="margin: 0; font-size: 19px; color: #C9D4E2; max-width: 720px">Sou Guilherme dos Santos Braz, técnico de processos de caldeiraria e usinagem na Sofir do Brasil, técnico em Eletrotécnica pelo CEFET-MG e graduando em Engenharia Mecânica pelo IFMG.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px">
+<a href="#projetos" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: #F08A4B; color: #0E1B2C; text-decoration: none; font-weight: 600; font-size: 16px">Ver projetos</a>
+<a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid #5B6F88; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px">LinkedIn</a>
+</div>
+</div>
+</section>
+
+<section aria-label="Resumo" style="background: #FFFFFF; border-bottom: 1px solid #D9DFE7">
+<div style="max-width: 1180px; margin: 0 auto; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Base</span>
+<span style="font-size: 16px; font-weight: 500">Contagem, Minas Gerais</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Setores</span>
+<span style="font-size: 16px; font-weight: 500">Mineração · Siderurgia</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Engenharia</span>
+<span style="font-size: 16px; font-weight: 500">Inventor (análise de tensões) · AutoCAD · Lantek · TOTVS Protheus · Excel</span>
+</div>
+</div>
+</section>
+
+<section id="sobre" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 48px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">01</p>
+<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Sobre</h2>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 18px; color: #26364B">
+<p style="margin: 0">Meu trabalho começa no desenho técnico e termina no chão de fábrica. Interpreto projetos de equipamentos de caldeiraria pesada, monto listas de materiais, detalho peças em CAD para programação de corte no Lantek, emito requisições de compra e ordens de produção e dou suporte técnico a caldeireiros, montadores e soldadores.</p>
+<p style="margin: 0">No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar software. Assim nasceu a ferramenta abaixo, um aplicativo de otimização de corte criado para suprir uma demanda que encontrei no meu próprio processo. De forma independente, também comecei a desenvolver projetos mecânicos para clientes, do conceito ao cálculo estrutural, colocando em prática o que estudo na engenharia.</p>
+<p style="margin: 0">Meu objetivo é me tornar um engenheiro mecânico completo, que domina o processo de fabricação e também sabe construir as ferramentas digitais para melhorá-lo.</p>
+</div>
+</section>
+
+<section id="experiencia" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">02</p>
+<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Experiência e formação</h2>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+
+<h4 style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4410E">Experiência</h4>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Técnico de Processos — Caldeiraria e Usinagem</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">jun/2025 – atual</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">Sofir do Brasil Construções Industriais · Contagem, MG</p>
+<p style="margin: 0; font-size: 17px; color: #26364B">Promovido após a trajetória no PCP. Planejamento da fabricação de equipamentos de caldeiraria pesada para mineração e siderurgia, com análise e otimização de processos de caldeiraria e usinagem, detalhamento de peças para corte CNC no Lantek, requisições de compra com relatórios de chapas, gestão de ordens de produção e suporte técnico à fábrica em montagem, solda, acabamento, controle de qualidade e pintura.</p>
+</article>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Auxiliar de Programação de Produção III → II (PCP)</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">dez/2023 – mai/2025</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">Sofir do Brasil Construções Industriais · Contagem, MG</p>
+<p style="margin: 0; font-size: 17px; color: #26364B">Interpretação de desenhos mecânicos, geração de listas de materiais, detalhamento e redesenho de peças e conjuntos em AutoCAD 2D e 3D, criação de ordens de produção e solicitações de compra no TOTVS Protheus.</p>
+</article>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Auxiliar de Eletricista</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">ago/2022 – out/2022</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">SWE Engenharia Elétrica e Automação · Belo Horizonte, MG</p>
+<p style="margin: 0; font-size: 17px; color: #26364B">Suporte em projetos de engenharia elétrica e automação industrial e execução de instalações sob supervisão técnica.</p>
+</article>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; border-bottom: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Aprendiz Industrial</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">jul/2019 – jul/2021</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">Belgo Bekaert Arames · Contagem, MG</p>
+<p style="margin: 0; font-size: 17px; color: #26364B">Primeiro contato com a indústria metalúrgica de grande porte.</p>
+</article>
+
+<h4 style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4410E">Formação</h4>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Engenharia Mecânica</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">em andamento</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">IFMG — Instituto Federal de Minas Gerais</p>
+</article>
+
+<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; border-bottom: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-size: 21px">Técnico em Eletrotécnica</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">concluído</span>
+</div>
+<p style="margin: 0; font-weight: 500; color: #4A5A70">CEFET-MG</p>
+</article>
+
+</div>
+</section>
+
+<section aria-label="Como eu trabalho" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px">
+<h3 style="margin: 0 0 24px; font-size: 22px">Do desenho à ordem de produção</h3>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 2px; background: #C9D2DD; border: 1px solid #C9D2DD">
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">01</span>
+<span style="font-weight: 600">Interpretação do desenho</span>
+<span style="font-size: 15px; color: #4A5A70">Leitura do projeto 2D/3D e análise de escopo</span>
+</li>
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">02</span>
+<span style="font-weight: 600">Lista de materiais</span>
+<span style="font-size: 15px; color: #4A5A70">Levantamento dos materiais em Excel</span>
+</li>
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">03</span>
+<span style="font-weight: 600">Detalhamento para corte</span>
+<span style="font-size: 15px; color: #4A5A70">Peças em CAD e entrada no Lantek</span>
+</li>
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">04</span>
+<span style="font-weight: 600">Compras</span>
+<span style="font-size: 15px; color: #4A5A70">Requisições com relatórios de chapas e corte</span>
+</li>
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">05</span>
+<span style="font-weight: 600">Ordens de produção</span>
+<span style="font-size: 15px; color: #4A5A70">Criação e detalhamento das OPs</span>
+</li>
+<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">06</span>
+<span style="font-weight: 600">Suporte à fábrica</span>
+<span style="font-size: 15px; color: #4A5A70">Dúvidas técnicas de montagem e solda</span>
+</li>
+</ol>
+</section>
+
+<section id="engenharia" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 48px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div>
+<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">03</p>
+<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Projetos de engenharia</h2>
+</div>
+<p style="margin: 0; max-width: 460px; color: #4A5A70; font-size: 16px">Projeto mecânico do conceito ao cálculo, desenvolvido de forma independente para cliente.</p>
+</div>
+
+<article style="background: #FFFFFF; border: 1px solid #D9DFE7; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
+<div class="tc-stage" id="tc-stage">
+<div class="tc-loading" id="tc-loading">carregando modelo 3D…</div>
+<div class="tc-chip" id="c-cond">Condensadora <small>30 kg · 4 pés</small></div>
+<div class="tc-chip" id="c-giro">Giro de 180° <small>pivô central</small></div>
+<div class="tc-chip" id="c-pivo">Pivô Ø1¼" <small>tubo Ø44,45 × 3</small></div>
+<div class="tc-chip" id="c-trava">Trava baioneta <small>pino Ø18</small></div>
+<div class="tc-chip" id="c-mf">Mão francesa <small>apoio da ponta</small></div>
+<div class="tc-ctrl">
+<div class="tc-seg" role="group" aria-label="Posição da plataforma">
+<button type="button" data-pos="work" aria-pressed="true">Trabalho</button>
+<button type="button" data-pos="mid" aria-pressed="false">Em movimento</button>
+<button type="button" data-pos="maint" aria-pressed="false">Manutenção</button>
+</div>
+<span class="tc-angle" aria-live="polite">giro <b id="tc-deg">180°</b> · <span id="tc-state">travada</span></span>
+</div>
+<span class="tc-hint">arraste para girar a vista</span>
+</div>
+<div style="padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">TC-2025-01</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 4px 10px; border: 1px solid #0E1B2C">Em verificação estrutural</span>
+</div>
+<h3 style="margin: 0; font-size: 26px; line-height: 1.2">Suporte articulado para condensadora de ar-condicionado</h3>
+<p style="margin: 0; font-size: 16px; color: #26364B">Suporte de fachada que gira 180° em torno de um pivô central, alternando entre a posição de trabalho e a de manutenção. O técnico acessa o equipamento sem andaime nem trabalho em altura fora da estrutura.</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #26364B">
+<li>Modelagem 3D e conjunto soldado no Inventor, com desenhos de fabricação em A3</li>
+<li>Carga de vento pela NBR 6123 nas duas orientações do equipamento</li>
+<li>Análise de tensões em quatro casos de carga, com contato pino-bucha e reações verificadas</li>
+<li>Trava tipo baioneta para fixar a plataforma em 0° e 180°</li>
+<li>Memória de cálculo e apresentação 3D interativa para o cliente</li>
+</ul>
+<dl style="margin: 4px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 2px; background: #C9D2DD; border: 1px solid #C9D2DD">
+<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Carga</dt>
+<dd style="margin: 0; font-size: 20px; font-weight: 600">30 kg</dd>
+</div>
+<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Vento</dt>
+<dd style="margin: 0; font-size: 20px; font-weight: 600">140 km/h</dd>
+</div>
+<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Giro</dt>
+<dd style="margin: 0; font-size: 20px; font-weight: 600">180°</dd>
+</div>
+<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Casos</dt>
+<dd style="margin: 0; font-size: 20px; font-weight: 600">4</dd>
+</div>
+</dl>
+<p style="margin: 0; font-size: 15px; color: #4A5A70"><strong style="color: #26364B">O que aprendi:</strong> [EX.: COMO UMA CHAPA SOLDADA EM TUBO DE PAREDE FINA VIRA O PONTO CRÍTICO, E A IMPORTÂNCIA DE VALIDAR CONTATOS E UNIDADES NA SIMULAÇÃO]</p>
+<p style="margin: auto 0 0; padding-top: 12px; border-top: 1px solid #E4E9EF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">Inventor · Análise de tensões · NBR 6123 · ASTM A36 · SAE 1020 · Three.js</p>
+<p style="margin: 0; font-size: 13px; color: #4A5A70">Projeto e cálculo de minha autoria; liberação final com ART de engenheiro habilitado.</p>
+</div>
+</article>
+</section>
+
+<section id="projetos" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px 96px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div>
+<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">04</p>
+<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Projeto de software</h2>
+</div>
+<p style="margin: 0; max-width: 460px; color: #4A5A70; font-size: 16px">Ferramenta criada a partir de uma demanda real do meu processo, hoje distribuída como produto.</p>
+</div>
+
+<article style="background: #FFFFFF; border: 1px solid #D9DFE7; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
+<div style="padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
+<img src="https://projtec1d-site.vercel.app/logo.png" alt="" style="height: 40px; width: auto">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 4px 10px; background: #0E1B2C; color: #FFFFFF">Produto comercial · v1.5.3</span>
+</div>
+<h3 style="margin: 0; font-size: 28px; line-height: 1.2">PROJTEC 1D</h3>
+<p style="margin: 0; font-weight: 500; font-size: 18px">Otimização de corte linear de perfis e barras</p>
+<p style="margin: 0; font-size: 16px; color: #26364B">Calcula o melhor aproveitamento das barras (algoritmo First-Fit Decreasing), considera as sobras já em estoque, gera relatório em PDF vetorial e imprime etiquetas direto na impressora Zebra. Organiza o histórico de trabalhos por commessa, com numeração automática de RCs, e funciona em equipe, com banco compartilhado entre os computadores da rede.</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #26364B">
+<li>Rendimento e retalho calculados na hora, por relatório</li>
+<li>Etiquetas impressas direto na Zebra, sem salvar arquivo</li>
+<li>Login, licenciamento e pagamento por assinatura</li>
+<li>Instalador para Windows e atualização automática</li>
+</ul>
+<p style="margin: 0; font-size: 16px; color: #26364B"><strong>Resultado:</strong> [EX.: X% DE MELHORA NO APROVEITAMENTO / TEMPO ECONOMIZADO POR TRABALHO]</p>
+<p style="margin: 0; padding-top: 12px; border-top: 1px solid #E4E9EF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">Python · PySide6 · Supabase · Vercel · Mercado Pago · ZPL · Inno Setup</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 8px">
+<a href="https://projtec1d-site.vercel.app" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #0E1B2C; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px">Acessar o site ↗</a>
+<a href="https://github.com/GuisBraz/projtec1d-downloads/releases" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 1px solid #C9D2DD; text-decoration: none; font-weight: 500; font-size: 15px">Versões publicadas ↗</a>
+</div>
+</div>
+<div style="background: #E4E9EF; padding: 28px; display: flex; flex-direction: column; gap: 24px; justify-content: center">
+<figure style="margin: 0">
+<img src="https://projtec1d-site.vercel.app/screenshot-inicio.jpg" alt="Tela inicial do PROJTEC 1D com o explorador de trabalhos" loading="lazy" style="display: block; width: 100%; height: auto; border: 1px solid #D9DFE7; background: #E4E9EF">
+<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #4A5A70; padding: 10px 2px 0">Tela inicial · explorador de trabalhos organizado por projeto</figcaption>
+</figure>
+<figure style="margin: 0">
+<img src="https://projtec1d-site.vercel.app/screenshot-relatorio.jpg" alt="Relatório de corte do PROJTEC 1D" loading="lazy" style="display: block; width: 100%; height: auto; border: 1px solid #D9DFE7; background: #E4E9EF">
+<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #4A5A70; padding: 10px 2px 0">Relatório de corte · barras, rendimento e retalho na mesma tela</figcaption>
+</figure>
+</div>
+</article>
+</section>
+
+<section id="contato" style="background: #FFFFFF; border-top: 1px solid #D9DFE7">
+<div style="max-width: 1180px; margin: 0 auto; padding: 88px 32px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">05</p>
+<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Contato</h2>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid #D9DFE7">
+<a href="mailto:guisbraz4@gmail.com" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">E-mail</span>
+<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">guisbraz4@gmail.com</span>
+</a>
+<a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">LinkedIn</span>
+<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">linkedin.com/in/guilherme-santos-66b8162a0 ↗</span>
+</a>
+<a href="https://github.com/GuisBraz" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">GitHub</span>
+<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">github.com/GuisBraz ↗</span>
+</a>
+</div>
+</div>
+<div style="border-top: 1px solid #D9DFE7">
+<p style="max-width: 1180px; margin: 0 auto; padding: 24px 32px; font-size: 14px; color: #4A5A70">© 2026 Guilherme dos Santos Braz</p>
+</div>
+</section>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+/* Modelo 3D do suporte articulado TC-2025-01: trabalho, em movimento e manutenção */
+(function(){
+const stage=document.getElementById('tc-stage');
+if(!stage)return;
+const loading=document.getElementById('tc-loading');
+if(!window.THREE){loading.textContent='não foi possível carregar o 3D';return}
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const css=n=>n==='--wall'?'#e3e6eb':'';
+loading.remove();
+
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+renderer.domElement.setAttribute('aria-label','Modelo 3D do suporte articulado girando entre a posição de trabalho e a de manutenção');
+renderer.domElement.tabIndex=0;
+
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(28,1,10,30000);
+const root=new THREE.Group(); scene.add(root);
+const hemi=new THREE.HemisphereLight(0xffffff,0xb8b2a8,0.55);
+const sun=new THREE.DirectionalLight(0xfff8ef,1.7); sun.position.set(-1400,2900,2600); sun.castShadow=true;
+sun.shadow.mapSize.set(2048,2048); Object.assign(sun.shadow.camera,{left:-2000,right:2000,top:2000,bottom:-1600,near:100,far:9000});
+sun.shadow.bias=-0.0004; sun.shadow.radius=4;
+const fill=new THREE.DirectionalLight(0xdfe6ff,0.35); fill.position.set(2200,600,1800);
+scene.add(hemi,sun,fill);
+
+const parts={};
+function M(key,color,o={}){const m=new THREE.MeshStandardMaterial(Object.assign({color,roughness:.5,metalness:.35},o));(parts[key]=parts[key]||[]).push(m);return m}
+function add(parent,geo,mat,cast=true){const m=new THREE.Mesh(geo,mat);m.castShadow=cast;m.receiveShadow=true;parent.add(m);return m}
+function box(parent,mat,x0,x1,y0,y1,z0,z1){[x0,x1]=[Math.min(x0,x1),Math.max(x0,x1)];[y0,y1]=[Math.min(y0,y1),Math.max(y0,y1)];[z0,z1]=[Math.min(z0,z1),Math.max(z0,z1)];
+  const g=new THREE.BoxGeometry(x1-x0,y1-y0,z1-z0);const m=add(parent,g,mat);m.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);return m}
+function cyl(parent,mat,r,y0,y1,x=0,z=0,seg=40){const g=new THREE.CylinderGeometry(r,r,y1-y0,seg);const m=add(parent,g,mat);m.position.set(x,(y0+y1)/2,z);return m}
+function rod(parent,mat,r,a,b,seg=24){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b);const d=B.clone().sub(A);const g=new THREE.CylinderGeometry(r,r,d.length(),seg);const m=add(parent,g,mat);m.position.copy(A.clone().add(B).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());return m}
+function flat(parent,mat,x,a,b,w,t){ // barra chata no plano y-z, entre a=[y,z] e b=[y,z], largura w (no plano), espessura t (em x)
+  const dy=b[0]-a[0],dz=b[1]-a[1],L=Math.hypot(dy,dz);const m=add(parent,new THREE.BoxGeometry(t,L,w),mat);
+  m.position.set(x,(a[0]+b[0])/2,(a[1]+b[1])/2);m.rotation.x=Math.atan2(dz,dy);return m}
+function gusset(parent,mat,pts,x){const s=new THREE.Shape(); s.moveTo(pts[0][0],pts[0][1]); pts.slice(1).forEach(p=>s.lineTo(p[0],p[1]));
+  const g=new THREE.ExtrudeGeometry(s,{depth:6.3,bevelEnabled:false}); const m=add(parent,g,mat); m.rotation.y=-Math.PI/2; m.position.set(x+3.15,0,0); return m}
+function ear(parent,mat,y,lockHole){const s=new THREE.Shape(); s.moveTo(-30,-9.5); s.lineTo(30,-9.5); s.lineTo(30,-309.5); s.absarc(0,-309.5,30,0,Math.PI,true); s.lineTo(-30,-9.5);
+  const h=new THREE.Path(); h.absarc(0,-309.5,16.3,0,Math.PI*2,false); s.holes.push(h);
+  if(lockHole){const k=new THREE.Path(); k.absarc(0,-252.3,10,0,Math.PI*2,false); s.holes.push(k)}
+  const g=new THREE.ExtrudeGeometry(s,{depth:9.5,bevelEnabled:false,curveSegments:28}); const m=add(parent,g,mat); m.rotation.x=-Math.PI/2; m.position.y=y; return m}
+
+const steelC=new THREE.Color('#a9afb6'), galv={roughness:.42,metalness:.5};
+const mCh=M('chumb',0x8b9096,{roughness:.3,metalness:.85});
+function anchor(parent,x,y,z0){ // arruela + porca sextavada + ponta da barra roscada, apontando para fora da parede (+z)
+  const w=cyl(parent,mCh,12,0,2.5,x,0,24);w.rotation.x=Math.PI/2;w.position.set(x,y,z0+1.25);
+  const n=cyl(parent,mCh,9.6,0,8,x,0,6);n.rotation.x=Math.PI/2;n.position.set(x,y,z0+6.5);
+  const s=cyl(parent,mCh,4.8,0,9,x,0,12);s.rotation.x=Math.PI/2;s.position.set(x,y,z0+15)}
+
+/* ---------- parede de alvenaria com janela de correr ---------- */
+const wallG=new THREE.Group(); root.add(wallG);
+const wallM=new THREE.MeshStandardMaterial({color:new THREE.Color(css('--wall')||'#e6e3dd'),roughness:.95,metalness:0});
+const WX0=-1700,WX1=1650,WY0=-950,WY1=1650, JX0=80,JX1=1080,JY0=230,JY1=1430;
+[[WX0,JX0,WY0,WY1],[JX1,WX1,WY0,WY1],[JX0,JX1,WY0,JY0],[JX0,JX1,JY1,WY1]].forEach(r=>{const m=box(wallG,wallM,r[0],r[1],r[2],r[3],-200,0);m.castShadow=false});
+const sillM=new THREE.MeshStandardMaterial({color:0xcfccc6,roughness:.6,metalness:.05});
+box(wallG,sillM,JX0-40,JX1+40,JY0-28,JY0,-150,32); // peitoril de granito, pingadeira para fora
+const frameM=new THREE.MeshStandardMaterial({color:0x2b2e33,roughness:.5,metalness:.4});
+[[JX0,JX0+45],[JX1-45,JX1]].forEach(r=>box(wallG,frameM,r[0],r[1],JY0,JY1,-110,-60));
+[[JY1-45,JY1],[JY0,JY0+45]].forEach(r=>box(wallG,frameM,JX0,JX1,r[0],r[1],-110,-60));
+const mid=(JX0+JX1)/2; box(wallG,frameM,mid-22,mid+22,JY0,JY1,-100,-70);
+const glassM=new THREE.MeshStandardMaterial({color:0x8fa9c2,roughness:.05,metalness:.3,transparent:true,opacity:.5});
+[[JX0+45,mid-22,-85],[mid+22,JX1-45,-95]].forEach(g=>{const m=add(wallG,new THREE.PlaneGeometry(g[1]-g[0],JY1-JY0-90),glassM,false);m.position.set((g[0]+g[1])/2,(JY0+JY1)/2,g[2])});
+box(wallG,new THREE.MeshStandardMaterial({color:0x5b636d,roughness:1}),JX0,JX1,JY0,JY1,-200,-185);
+
+/* ---------- peças fixas ---------- */
+const fixed=new THREE.Group(); root.add(fixed);
+const PZ=309.5;
+const mInf=M('inf',steelC.getHex(),galv), mSup=M('sup',steelC.getHex(),galv);
+const mBuch=M('buch',0xf1e7c6,{roughness:.6,metalness:0});
+// suporte superior: chapa 150x150x9,5 (4 furos 110x110), orelha 3/8" e reforço por cima
+box(fixed,mSup,-75,75,-28,122,0,9.5); ear(fixed,mSup,12,true);
+gusset(fixed,mSup,[[9.5,21.5],[209.5,21.5],[209.5,41.5],[29.5,101.5],[9.5,101.5]],0);
+[[-55,102],[55,102],[-55,-8],[55,-8]].forEach(p=>anchor(fixed,p[0],p[1],9.5));
+// suporte inferior: chapa 150x150, orelha com reforço por baixo, pino Ø1¼" soldado
+box(fixed,mInf,-75,75,-400,-250,0,9.5); ear(fixed,mInf,-299.5,false);
+gusset(fixed,mInf,[[9.5,-299.5],[9.5,-379.5],[29.5,-379.5],[209.5,-319.5],[209.5,-299.5]],0);
+[[-55,-270],[55,-270],[-55,-380],[55,-380]].forEach(p=>anchor(fixed,p[0],p[1],9.5));
+cyl(fixed,mInf,15.9,-304.5,21.5,0,PZ);
+cyl(fixed,mBuch,22.2,0,10,0,PZ); cyl(fixed,mBuch,22.2,-290,-280,0,PZ);
+// mãos francesas: chapa vertical 63,5 x 9,5 x 200 com 2 chumbadores a 150 mm, braço em L 2" x 1/4" de 500 mm e diagonal em barra chata
+const XMF=846;
+function maoFrancesa(key,xc){const m=M(key,steelC.getHex(),galv);const g=new THREE.Group();fixed.add(g);
+  const yt=-50.8;
+  box(g,m,xc-31.75,xc+31.75,yt-6.3-200,yt-6.3,0,9.5);
+  box(g,m,xc-25.4,xc+25.4,yt-6.3,yt,9.5,500);
+  box(g,m,xc+19.1,xc+25.4,yt-50.8,yt-6.3,9.5,500);
+  flat(g,m,xc,[yt-6.3-190,9.5],[yt-40,300],38,6.3);
+  box(g,m,xc-25.4,xc+25.4,yt-50.8,yt-6.3,494,500);
+  [yt-6.3-25,yt-6.3-175].forEach(y=>anchor(g,xc,y,9.5));
+  return g}
+const mfw=maoFrancesa('mfw',-XMF), mfm=maoFrancesa('mfm',XMF);
+
+/* ---------- plataforma (gira) ---------- */
+const pivot=new THREE.Group(); pivot.position.set(0,0,PZ); root.add(pivot);
+const mPl=M('plat',steelC.getHex(),galv);
+(function(){const sh=new THREE.Shape();sh.absarc(0,0,22.2,0,Math.PI*2,false);const h=new THREE.Path();h.absarc(0,0,19.2,0,Math.PI*2,true);sh.holes.push(h);
+ const g=new THREE.ExtrudeGeometry(sh,{depth:280,bevelEnabled:false,curveSegments:40});const m=add(pivot,g,mPl);m.rotation.x=Math.PI/2})();
+const X0=22,X1=872, YB=-50.8, YH=YB+6.3;
+[[-175,-168.7,-175,-124.2],[168.7,175,124.2,175]].forEach(s=>{box(pivot,mPl,X0,X1,YB,0,s[0],s[1]);box(pivot,mPl,X0,X1,YB,YH,s[2],s[3])});
+[[X0,X0+6.3,X0,X0+50.8],[X1-6.3,X1,X1-50.8,X1]].forEach(s=>{box(pivot,mPl,s[0],s[1],YB,0,-175,175);box(pivot,mPl,s[2],s[3],YB,YH,-175,175)});
+[222,420.8,620.6].forEach(x=>box(pivot,mPl,x,x+50.8,YB-6.3,YB,-175,175));
+box(pivot,mPl,X0+50,X1-60,YB-12.6,YB-6.3,-25,25);
+rod(pivot,mPl,22.2,[0,-242,0],[427,YB-12.6,0],28);
+(function(){const c=57.2,sh=new THREE.Shape();
+ sh.moveTo(22,-95);sh.lineTo(22,95);sh.lineTo(0,95);sh.absarc(0,55,40,Math.PI/2,Math.PI,false);sh.lineTo(-40,-55);sh.absarc(0,-55,40,Math.PI,Math.PI*1.5,false);sh.lineTo(22,-95);
+ const key=v=>{const k=new THREE.Path(),a=Math.asin(.5);k.moveTo(-20,v-5);k.lineTo(-8.66,v-5);k.absarc(0,v,10,Math.PI+a,Math.PI*2-a,false);k.lineTo(20,v-5);k.lineTo(20,v+5);k.lineTo(8.66,v+5);k.absarc(0,v,10,a,Math.PI-a,false);k.lineTo(-20,v+5);k.closePath();return k};
+ const slot=(u0,u1,v,r)=>{const k=new THREE.Path();k.moveTo(u0,v-r);k.lineTo(u1,v-r);k.absarc(u1,v,r,-Math.PI/2,Math.PI/2,false);k.lineTo(u0,v+r);k.absarc(u0,v,r,Math.PI/2,Math.PI*1.5,false);return k};
+ const ctr=new THREE.Path();ctr.absarc(0,0,16.3,0,Math.PI*2,true);
+ sh.holes.push(ctr,key(c),key(-c),slot(-6,6,84,5.5),slot(-6,6,-84,5.5),slot(-18,0,30,6),slot(-18,0,-30,6));
+ const g=new THREE.ExtrudeGeometry(sh,{depth:6.3,bevelEnabled:false,curveSegments:32});const m=add(pivot,g,mPl);m.rotation.x=Math.PI/2})();
+
+// condensadora 810 x 560 x 300 dentro do quadro, sobre 4 pés
+const cond=new THREE.Group(); pivot.add(cond); cond.position.set(447,YH,0);
+const body=new THREE.MeshStandardMaterial({color:0xf3f3f0,roughness:.5,metalness:.05});
+const dark=new THREE.MeshStandardMaterial({color:0x2c3036,roughness:.7,metalness:.2});
+const metal=new THREE.MeshStandardMaterial({color:0x9aa0a6,metalness:.6,roughness:.4});
+box(cond,body,-405,405,16,560,-150,150);
+const footM=new THREE.MeshStandardMaterial({color:0x3a3f46,roughness:.55,metalness:.5});
+[-300,300].forEach(x=>[-1,1].forEach(sz=>{box(cond,footM,x-30,x+30,0,4,sz*124,sz*162);box(cond,footM,x-30,x+30,0,16,sz*146,sz*150);cyl(cond,metal,8,4,10,x,sz*137,6)}));
+const grille=new THREE.Group(); cond.add(grille); grille.position.set(120,290,-150.5); grille.rotation.y=Math.PI;
+add(grille,new THREE.CircleGeometry(205,64),dark,false);
+for(let r=40;r<=200;r+=32){const t=add(grille,new THREE.TorusGeometry(r,2.2,8,72),metal,false);t.position.z=4}
+for(let i=0;i<4;i++){const b=add(grille,new THREE.BoxGeometry(410,4,4),metal,false);b.rotation.z=i*Math.PI/4;b.position.z=5}
+const slatM=new THREE.MeshStandardMaterial({color:0xd9dad8,roughness:.6});
+for(let i=0;i<9;i++)box(cond,slatM,-380,-170,90+i*48,96+i*48,-152,-150);
+box(cond,metal,-380,-250,60,120,-156,-150);
+for(let i=0;i<14;i++)box(cond,slatM,-385,385,40+i*36,43+i*36,150,152); // serpentina na face de trás
+box(cond,dark,395,407,60,200,-60,60); // tampa das válvulas de serviço
+
+// pino-trava fixo na orelha de cima, a 57 mm do eixo, lado da parede
+const trava=new THREE.Group(); fixed.add(trava); trava.position.set(0,21.5,PZ-57.2);
+const mTr=M('trava',0x3b414a,{roughness:.35,metalness:.7});
+cyl(trava,mTr,26,0,18,0,0,40); cyl(trava,mTr,9,-40,0,0,0,24); box(trava,mTr,-19,19,-66,-40,-4.5,4.5); box(trava,mTr,-45,45,24,34,-6,6);
+
+const edgeM=new THREE.LineBasicMaterial({color:0x22252b,transparent:true,opacity:.42});
+[fixed,pivot].forEach(g=>g.traverse(o=>{if(o.isMesh&&o.geometry&&o.material!==glassM){o.add(new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry,28),edgeM))}}));
+wallG.traverse(o=>{if(o.isMesh&&o.material!==glassM){o.add(new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry,28),new THREE.LineBasicMaterial({color:0x22252b,transparent:true,opacity:.12})))}});
+
+
+/* ---------- câmera ---------- */
+const target=new THREE.Vector3(-120,180,420);
+let controls=null;
+if(THREE.OrbitControls){controls=new THREE.OrbitControls(camera,renderer.domElement);
+  Object.assign(controls,{enableZoom:false,enablePan:false,enableDamping:true,dampingFactor:.08,minPolarAngle:.5,maxPolarAngle:1.55,minAzimuthAngle:-1.2,maxAzimuthAngle:1.2});
+  controls.target.copy(target)}
+function frame(){const w=stage.clientWidth,h=stage.clientHeight;if(!w||!h)return;
+  renderer.setSize(w,h,false);camera.aspect=w/h;
+  const hf=Math.atan(Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.aspect);
+  const dist=Math.max(3700,1250/Math.tan(hf));
+  const az=-.45,pol=1.12;
+  camera.position.set(target.x+dist*Math.sin(pol)*Math.sin(az),target.y+dist*Math.cos(pol),target.z+dist*Math.sin(pol)*Math.cos(az));
+  camera.updateProjectionMatrix();if(controls)controls.update();else camera.lookAt(target)}
+new ResizeObserver(frame).observe(stage); frame();
+let mx=0,my=0;
+stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5});
+stage.addEventListener('pointerleave',()=>{mx=0;my=0});
+
+/* ---------- posições: trabalho (-180°), em movimento (-90°, trava aberta), manutenção (0°) ---------- */
+const POS={work:{ang:-Math.PI,keepUp:false},mid:{ang:-Math.PI/2,keepUp:true},maint:{ang:0,keepUp:false}};
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+let ang=-Math.PI, tgt=-Math.PI, pinUp=0, pinTgt=0, busy=false, pending=null, rot=null, want='work';
+const btns=[...stage.querySelectorAll('.tc-seg button')];
+const degEl=document.getElementById('tc-deg'), stEl=document.getElementById('tc-state');
+function setButtons(){btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.pos===want))}
+const wait=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+const until=fn=>new Promise(r=>{(function chk(){fn()?r():requestAnimationFrame(chk)})()});
+async function goTo(key){want=key;setButtons();const p=POS[key];
+  if(busy){pending=key;return}busy=true;tgt=p.ang;
+  if(Math.abs(ang-tgt)>.01){pinTgt=1;await until(()=>pinUp>.97);await wait(120);await until(()=>Math.abs(ang-tgt)<.003);await wait(150)}
+  else if(p.keepUp){pinTgt=1;await until(()=>pinUp>.97)}
+  if(!p.keepUp){pinTgt=0;await until(()=>pinUp<.03)}
+  busy=false;
+  if(pending){const q=pending;pending=null;if(q!==key||POS[q].ang!==ang)goTo(q)}}
+btns.forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.pos)));
+
+/* ---------- etiquetas presas ao modelo ---------- */
+const chips=[
+  {el:document.getElementById('c-cond'),obj:cond,p:new THREE.Vector3(0,560,0),dx:0,dy:-28},
+  {el:document.getElementById('c-giro'),obj:pivot,p:new THREE.Vector3(872,0,175),dx:0,dy:-28},
+  {el:document.getElementById('c-pivo'),obj:fixed,p:new THREE.Vector3(0,-160,PZ),dx:110,dy:10},
+  {el:document.getElementById('c-trava'),obj:fixed,p:new THREE.Vector3(0,45,PZ-57),dx:95,dy:-34},
+  {el:document.getElementById('c-mf'),obj:fixed,p:new THREE.Vector3(-XMF,-200,250),dx:-20,dy:40},
+];
+const v=new THREE.Vector3();
+function project(t){const w=stage.clientWidth,h=stage.clientHeight,top=64;
+  chips.forEach((c,i)=>{v.copy(c.p);c.obj.localToWorld(v);v.project(camera);
+    const fl=reduce?0:Math.sin(t/900+i*1.7)*4, cw=c.el.offsetWidth/2, ch=c.el.offsetHeight/2, pad=8;
+    let x=(v.x*.5+.5)*w+(c.dx||0), y=(-v.y*.5+.5)*h+(c.dy||0)+fl;
+    x=Math.min(w-cw-pad,Math.max(cw+pad,x)); y=Math.min(h-ch-pad,Math.max(ch+top,y));
+    c.el.style.transform=`translate(${x-cw}px,${y-ch}px)`})}
+
+/* ---------- laço de animação: só renderiza com o palco visível ---------- */
+let vis=true;
+new IntersectionObserver(es=>es.forEach(e=>{vis=e.isIntersecting}),{rootMargin:'120px'}).observe(stage);
+let last=performance.now(), tiltX=0, tiltY=0;
+function tick(t){const dt=Math.min(.05,(t-last)/1000);last=t;const k=reduce?1:1-Math.pow(.0016,dt);
+  if(Math.abs(tgt-ang)>1e-4&&(!busy||pinUp>.95||reduce)){
+    if(rot==null||rot.to!==tgt)rot={from:ang,to:tgt,t0:t,dur:reduce?1:900+Math.abs(tgt-ang)*520};
+    const p=Math.min(1,(t-rot.t0)/rot.dur);ang=rot.from+(rot.to-rot.from)*ease(p);if(p>=1){ang=tgt;rot=null}}
+  pinUp+=(pinTgt-pinUp)*(reduce?1:Math.min(1,dt*6));
+  pivot.rotation.y=ang; trava.position.y=21.5+pinUp*80; trava.rotation.y=pinUp*Math.PI/2;
+  chips[1].el.style.opacity=Math.abs(ang+Math.PI)<.05?1:0;
+  degEl.textContent=Math.round(-ang*180/Math.PI)+'°';
+  stEl.textContent=(rot||pinUp>.05&&pinUp<.95)?'em movimento':pinUp>.5?'trava aberta':'travada';
+  if(vis){tiltY+=(mx*.10-tiltY)*k*.6; tiltX+=(my*.05-tiltX)*k*.6; root.rotation.set(tiltX,tiltY,0);
+    if(controls)controls.update(); renderer.render(scene,camera); project(t)}
+  requestAnimationFrame(tick)}
+setButtons(); requestAnimationFrame(tick);
+})();
+
+</script>
+</body>
+</html>
