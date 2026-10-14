@@ -50,28 +50,6 @@ Calcula o melhor aproveitamento de barras e perfis (First-Fit Decreasing), contr
 
 `Python` `PySide6` `Supabase` `Vercel` `Mercado Pago` `ZPL` `Inno Setup` · [Versões publicadas](https://github.com/GuisBraz/projtec1d-downloads/releases)
 
-### ROSTAG PCP — controle do planejamento de projetos
-Substitui uma planilha de controle de commessas. Cada projeto recebe o checklist padrão do PCP como cronograma encadeado, com datas calculadas a partir das durações, duas janelas de prazo, paralisação com contagem do tempo parado, notificações, painel de indicadores e linha do tempo. Visualização aberta por link; edição só com login, travada nas regras do Firestore.
-
-`HTML/JS` `Firebase` `GitHub Pages` `Chart.js` · [Repositório](https://github.com/GuisBraz/rostag-pcp)
-
-### CNC Gestão — programação de corte plasma e oxicorte
-Fila de programas CNC por máquina, perfis por função (PCP, operador, gestão), cronômetro e alerta de atraso, agendamento que considera paradas planejadas e feriados, calendário mensal e Modo TV para o chão de fábrica.
-
-`React` `Firebase` `Vercel` `Recharts`
-
-### Carga Máquina Usinagem — *protótipo funcional*
-Alternativa ao MS Project para programar mandrilhadoras, tornos, centros de usinagem e setores manuais. Lê as OPs do ERP, respeita a sequência do roteiro, bloqueia sobreposição de máquina e sinaliza prazos estourados. Validado com dados reais de 54 operações em 9 máquinas.
-
-`HTML` `JavaScript` `Integração com ERP (Protheus)`
-
-## Em desenvolvimento
-
-### Simulador de empenamento na solda
-Importar o modelo 3D da peça, marcar as soldas como na aba Welding do Inventor e estimar a distorção considerando aporte térmico, volume de solda, espessura e processo (GMAW, FCAW, TIG), além do tempo de solda.
-**Etapa atual:** visualizador 3D que abre arquivos STEP direto no navegador.
-
-`Three.js` `OpenCascade (WebAssembly)`
 
 ## Ferramentas
 
