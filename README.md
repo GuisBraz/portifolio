@@ -18,8 +18,8 @@ No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar softwar
 
 | Período | Cargo | Empresa |
 |---|---|---|
-| jun/2025 – atual | Técnico de Processos — Caldeiraria e Usinagem | Sofir do Brasil Construções Industriais |
-| dez/2023 – mai/2025 | Auxiliar de Programação de Produção III → II (PCP) | Sofir do Brasil Construções Industriais |
+| mai/2026 – atual | Técnico de Processos — Caldeiraria e Usinagem | Sofir do Brasil Construções Industriais |
+| dez/2023 – abr/2026 | Auxiliar de Programação de Produção III → II (PCP) | Sofir do Brasil Construções Industriais |
 | ago/2022 – out/2022 | Auxiliar de Eletricista | SWE Engenharia Elétrica e Automação |
 | jul/2019 – jul/2021 | Aprendiz Industrial | Belgo Bekaert Arames |
 
