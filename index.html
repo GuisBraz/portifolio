@@ -5,337 +5,394 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guilherme Braz — Portfólio</title>
 <meta name="description" content="Portfólio de Guilherme dos Santos Braz: técnico de processos em caldeiraria e usinagem, graduando em Engenharia Mecânica e desenvolvedor de software industrial.">
+<meta name="theme-color" content="#F7F9FC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232453C7'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='24' text-anchor='middle' fill='%23fff'%3EGB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
+/* Mesma identidade do Rostag Systems: branco gelo, azul royal e azul celeste; conteúdo centralizado. */
+:root{
+  --fundo:#F7F9FC; --superficie:#FFFFFF; --superficie-2:#F0F5FC; --borda:#E1E8F2; --borda-forte:#C9D6EA;
+  --royal:#2453C7; --royal-escuro:#1A3E9E; --royal-claro:#E8EEFB; --celeste:#5AA9E6; --celeste-claro:#E6F2FC;
+  --tinta:#14254A; --tinta-2:#5B6B86; --tinta-3:#8A97AD; --ok:#14A38B; --ok-claro:#E3F6F2; --atencao:#B7791F; --atencao-claro:#FFF6E5;
+  --raio:12px; --raio-p:8px;
+  --sombra:0 1px 2px rgba(20,37,74,.05),0 4px 16px rgba(20,37,74,.05);
+  --sombra-alta:0 12px 40px rgba(20,37,74,.18);
+  --topo-fundo:rgba(255,255,255,.92); --palco:#EEF3FA;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fundo:#0F172E; --superficie:#16203A; --superficie-2:#1D2A4A; --borda:#26365C; --borda-forte:#34477A;
+  --royal:#6D8DF2; --royal-escuro:#8AA4F6; --royal-claro:#22325C; --celeste:#5AB1EC; --celeste-claro:#18324F;
+  --tinta:#E6ECF8; --tinta-2:#A7B3CC; --tinta-3:#7785A3; --ok:#3CC2A5; --ok-claro:#133B3A; --atencao:#E3B35C; --atencao-claro:#2E2A1C;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25); --sombra-alta:0 12px 40px rgba(0,0,0,.5);
+  --topo-fundo:rgba(22,32,58,.92); --palco:#1A2645; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --fundo:#0F172E; --superficie:#16203A; --superficie-2:#1D2A4A; --borda:#26365C; --borda-forte:#34477A;
+  --royal:#6D8DF2; --royal-escuro:#8AA4F6; --royal-claro:#22325C; --celeste:#5AB1EC; --celeste-claro:#18324F;
+  --tinta:#E6ECF8; --tinta-2:#A7B3CC; --tinta-3:#7785A3; --ok:#3CC2A5; --ok-claro:#133B3A; --atencao:#E3B35C; --atencao-claro:#2E2A1C;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25); --sombra-alta:0 12px 40px rgba(0,0,0,.5);
+  --topo-fundo:rgba(22,32,58,.92); --palco:#1A2645; color-scheme:dark}
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#F2F4F7}
-a{color:#B4410E}a:hover{color:#8A3009}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{margin:0}
+body{background:var(--fundo);color:var(--tinta);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:44px}
+a{color:var(--royal);text-decoration:none}
+a:hover{text-decoration:underline}
 img{max-width:100%}
+h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
+:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+
+/* botões */
+.botao,.botao-sec{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border-radius:var(--raio-p);padding:0 20px;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:background .15s,border-color .15s,transform .15s}
+.botao{background:var(--royal);color:#fff}
+.botao:hover{background:var(--royal-escuro);text-decoration:none}
+:root[data-theme="dark"] .botao{background:#3D63D6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .botao{background:#3D63D6}}
+.botao-sec{background:var(--superficie);border-color:var(--borda-forte);color:var(--royal)}
+.botao-sec:hover{background:var(--royal-claro);text-decoration:none}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;padding:10px 24px;background:var(--topo-fundo);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+.marca{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:-.01em;color:var(--royal);font-size:1.05rem;white-space:nowrap}
+.marca span{color:var(--celeste);font-weight:600}
+.marca:hover{text-decoration:none}
+.marca-icone{width:30px;height:30px;border-radius:8px;background:var(--royal);color:#fff;display:grid;place-items:center;font-size:.78rem;font-weight:700;flex:none}
+.menu{display:flex;gap:4px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{padding:8px 14px;border-radius:999px;color:var(--tinta-2);font-weight:500;font-size:.93rem;white-space:nowrap}
+.menu a:hover{background:var(--superficie-2);text-decoration:none;color:var(--tinta)}
+.menu a.ativo{background:var(--royal-claro);color:var(--royal);font-weight:600}
+.tema{background:none;border:1px solid var(--borda);color:var(--tinta-2);width:36px;height:36px;border-radius:999px;cursor:pointer;display:grid;place-items:center;flex:none}
+.tema:hover{background:var(--superficie-2);color:var(--tinta)}
+.tema svg{width:18px;height:18px}
+
+/* estrutura */
+main{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:72px 0 8px}
+.titulo-pagina{text-align:center;margin:0 auto 32px;max-width:720px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.titulo-pagina .num{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--celeste)}
+.titulo-pagina h2{display:inline-block;font-size:1.85rem;letter-spacing:-.02em;font-weight:600;padding-bottom:4px;border-bottom:2px solid var(--celeste)}
+.titulo-pagina p{margin:4px 0 0;color:var(--tinta-2)}
+.cartao{background:var(--superficie);border:1px solid var(--borda);border-radius:var(--raio);box-shadow:var(--sombra)}
+
+/* abertura */
+.saudacao{text-align:center;padding:64px 0 16px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.avatar{width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,var(--royal),var(--celeste));color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.6rem;box-shadow:var(--sombra)}
+.saudacao .linha-topo{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--royal)}
+.saudacao h1{font-size:clamp(1.7rem,4.6vw,3.2rem);font-weight:700;letter-spacing:-.03em;max-width:880px;line-height:1.12}
+.saudacao h1 em{font-style:normal;color:var(--royal)}
+.saudacao p{margin:0;font-size:1.12rem;color:var(--tinta-2);max-width:700px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:36px 0 0}
+.tile{background:var(--superficie);border:1px solid var(--borda);border-radius:var(--raio);box-shadow:var(--sombra);padding:18px 14px;text-align:center;display:flex;flex-direction:column;gap:4px;border-top:3px solid var(--royal);min-width:0}
+.tile-rotulo{color:var(--tinta-2);font-size:.82rem}
+.tile-valor{font-size:1.05rem;font-weight:600;color:var(--tinta)}
+.tile.celeste{border-top-color:var(--celeste)}
+.tile.ok{border-top-color:var(--ok)}
+
+/* sobre */
+.sobre{max-width:720px;margin:0 auto;padding:28px 32px;text-align:center;display:flex;flex-direction:column;gap:14px;font-size:1.05rem;line-height:1.75}
+.sobre p{margin:0}
+
+/* experiência: linha do tempo centralizada */
+.subtitulo{text-align:center;font-size:1.05rem;font-weight:600;color:var(--tinta);margin:8px 0 18px}
+.linha{list-style:none;margin:0 auto;padding:0;max-width:780px;position:relative;display:flex;flex-direction:column;gap:16px}
+.linha::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--royal),var(--celeste));transform:translateX(-50%);opacity:.25}
+.linha li{position:relative}
+.item{position:relative;padding:20px 24px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+.item h3{font-size:1.1rem}
+.data{display:inline-block;font-size:.8rem;font-weight:600;color:var(--royal);background:var(--royal-claro);border-radius:999px;padding:3px 12px;font-variant-numeric:tabular-nums}
+.data.atual{color:var(--ok);background:var(--ok-claro)}
+.empresa{margin:0;color:var(--tinta-2);font-weight:500;font-size:.92rem}
+.item p.desc{margin:4px 0 0;color:var(--tinta);font-size:.97rem;max-width:620px}
+.formacao{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:780px;margin:0 auto}
+
+/* fluxo */
+.fluxo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;position:relative}
+.fluxo li{text-align:center;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.fluxo .passo{color:#fff}
+.passo{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:.9rem;color:#fff;background:linear-gradient(135deg,var(--royal),var(--celeste))}
+.fluxo b{font-size:.95rem}
+.fluxo span{font-size:.85rem;color:var(--tinta-2)}
+.barra{height:6px;border-radius:999px;background:var(--superficie-2);overflow:hidden;margin:0 auto 18px;max-width:780px}
+.barra span{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--royal),var(--celeste))}
+
+/* projetos */
+.projeto{overflow:hidden;border-top:3px solid var(--royal)}
+.projeto-corpo{padding:32px clamp(20px,4vw,48px) 36px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.selos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.selo{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;border-radius:999px;padding:4px 12px;background:var(--superficie-2);color:var(--tinta-2);border:1px solid var(--borda)}
+.selo.royal{background:var(--royal-claro);color:var(--royal);border-color:transparent}
+.selo.atencao{background:var(--atencao-claro);color:var(--atencao);border-color:transparent}
+.selo.atencao::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.projeto h3{font-size:1.6rem;letter-spacing:-.02em}
+.projeto .resumo{margin:0;max-width:680px;color:var(--tinta-2);font-size:1.02rem}
+.pilulas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:820px}
+.pilulas li{background:var(--celeste-claro);color:var(--tinta);border-radius:999px;padding:6px 14px;font-size:.88rem}
+.numeros{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:100%;max-width:720px}
+.numeros div{background:var(--superficie-2);border-radius:var(--raio-p);padding:14px 8px;text-align:center}
+.numeros dt{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.numeros dd{margin:2px 0 0;font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.nota{margin:0;font-size:.92rem;color:var(--tinta-2);max-width:680px}
+.nota strong{color:var(--tinta)}
+.stack{margin:0;padding-top:14px;border-top:1px solid var(--borda);font-size:.85rem;color:var(--tinta-2);width:100%;max-width:720px}
+.telas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:0 clamp(20px,4vw,48px) 36px}
+.telas figure{margin:0}
+.telas img{display:block;width:100%;height:auto;border-radius:var(--raio-p);border:1px solid var(--borda);background:var(--superficie-2)}
+.telas figcaption{font-size:.82rem;color:var(--tinta-2);padding-top:8px;text-align:center}
+.logo-pt{height:44px;width:auto}
+
 /* palco 3D do suporte TC-2025-01 */
-.tc-stage{position:relative;min-height:520px;background:#E4E9EF;overflow:hidden;font-family:'IBM Plex Sans',system-ui,sans-serif}
-.tc-stage{align-self:start;position:sticky;top:16px;height:min(640px,calc(100vh - 32px))}
-@media (max-width:820px){.tc-stage{position:relative;top:auto;height:auto;align-self:stretch}}
+.tc-stage{position:relative;height:min(560px,70vh);min-height:400px;background:radial-gradient(120% 90% at 50% 20%,var(--superficie),var(--palco));overflow:hidden;border-bottom:1px solid var(--borda)}
 .tc-stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab;outline:none;touch-action:pan-y}
 .tc-stage canvas:active{cursor:grabbing}
-.tc-loading{position:absolute;inset:0;display:grid;place-items:center;color:#4A5A70;font-family:'IBM Plex Mono',monospace;font-size:13px}
-.tc-chip{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;background:#FFFFFF;color:#0E1B2C;font-size:13px;font-weight:500;padding:7px 12px 7px 10px;border:1px solid #D9DFE7;box-shadow:0 8px 22px -12px rgba(14,27,44,.35);white-space:nowrap;pointer-events:none;will-change:transform;transition:opacity .35s}
-.tc-chip::before{content:"";width:7px;height:7px;background:#F08A4B;flex:none}
-.tc-chip small{color:#4A5A70;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:400}
-.tc-ctrl{position:absolute;left:16px;right:16px;top:16px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;z-index:2}
-.tc-seg{display:inline-flex;flex-wrap:wrap;background:#FFFFFF;border:1px solid #C9D2DD;padding:3px}
-.tc-seg button{all:unset;cursor:pointer;min-height:38px;display:inline-flex;align-items:center;padding:0 14px;font-size:14px;font-weight:500;color:#4A5A70;transition:background .25s,color .25s}
-.tc-seg button:hover{color:#0E1B2C}
-.tc-seg button[aria-pressed="true"]{background:#0E1B2C;color:#FFFFFF}
-.tc-seg button:focus-visible{outline:2px solid #B4410E;outline-offset:2px}
-.tc-angle{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#26364B;background:rgba(255,255,255,.75);padding:6px 10px;font-variant-numeric:tabular-nums}
-.tc-angle b{color:#0E1B2C;font-weight:500}
-.tc-hint{position:absolute;right:14px;bottom:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A5A70;pointer-events:none}
-@media (max-width:560px){.tc-stage{min-height:440px}.tc-chip{font-size:11.5px;padding:5px 9px}.tc-chip small{display:none}.tc-seg button{padding:0 10px;font-size:13px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tc-seg button{transition:none}}
+.tc-loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--tinta-2);font-size:.85rem}
+.tc-chip{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;background:var(--superficie);color:var(--tinta);font-size:.82rem;font-weight:500;padding:6px 12px 6px 10px;border:1px solid var(--borda);border-radius:10px;box-shadow:var(--sombra);white-space:nowrap;pointer-events:none;will-change:transform;transition:opacity .35s}
+.tc-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--celeste);flex:none}
+.tc-chip small{color:var(--tinta-2);font-size:.72rem;font-weight:400}
+.tc-ctrl{position:absolute;left:12px;right:12px;top:14px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;z-index:2}
+.tc-seg{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;background:var(--topo-fundo);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--borda);border-radius:999px;padding:4px;box-shadow:var(--sombra)}
+.tc-seg button{all:unset;cursor:pointer;padding:7px 14px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--tinta-2);transition:background .2s,color .2s}
+.tc-seg button:hover{background:var(--superficie-2);color:var(--tinta)}
+.tc-seg button[aria-pressed="true"]{background:var(--royal-claro);color:var(--royal);font-weight:600}
+.tc-seg button:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+.tc-angle{font-size:.8rem;color:var(--tinta-2);background:var(--topo-fundo);border:1px solid var(--borda);border-radius:999px;padding:6px 12px;font-variant-numeric:tabular-nums}
+.tc-angle b{color:var(--tinta);font-weight:600}
+.tc-hint{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:.75rem;color:var(--tinta-3);pointer-events:none}
 
+/* contato */
+.contatos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.contato{padding:22px 16px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;border-top:3px solid var(--celeste);color:var(--tinta);transition:transform .15s,border-color .15s;min-width:0}
+.contato:hover{text-decoration:none;transform:translateY(-2px);border-color:var(--royal)}
+.contato span{font-size:.8rem;color:var(--tinta-2);text-transform:uppercase;letter-spacing:.08em}
+.contato b{font-weight:600;overflow-wrap:anywhere}
+.copyright{text-align:center;color:var(--tinta-3);font-size:.82rem;margin:56px 0 24px}
+
+/* rodapé fixo */
+.rodape-autor{position:fixed;left:0;right:0;bottom:0;z-index:30;text-align:center;font-size:.78rem;color:var(--tinta-2);padding:10px 16px;background:var(--topo-fundo);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--borda);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rodape-autor a{color:var(--tinta);font-weight:600}
+
+@media (max-width:900px){
+  .fluxo{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .numeros{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .topo{padding:8px 12px;gap:10px}
+  .marca-texto{display:none}
+  .menu{justify-content:flex-start}
+  .tiles,.formacao,.contatos,.telas{grid-template-columns:minmax(0,1fr)}
+  .fluxo{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .linha::before{display:none}
+  .sobre{padding:22px 18px}
+  .tc-chip{font-size:.72rem;padding:4px 8px}.tc-chip small{display:none}
+  .rodape-autor{white-space:normal;font-size:.72rem}
+  body{padding-bottom:60px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-<div style="font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0E1B2C; background: #F2F4F7; line-height: 1.55">
 
-<header style="background: #0E1B2C; color: #FFFFFF">
-<div style="max-width: 1180px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#topo" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none">
-<span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid #F08A4B; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px">GB</span>
-<span style="font-weight: 600; font-size: 16px; letter-spacing: 0.02em">Guilherme Braz</span>
-</a>
-<nav aria-label="Seções" style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 15px">
-<a href="#sobre" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Sobre</a>
-<a href="#experiencia" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Experiência</a>
-<a href="#engenharia" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Engenharia</a>
-<a href="#projetos" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Software</a>
-<a href="#contato" style="color: #D5DEE9; text-decoration: none; padding: 10px 0">Contato</a>
-</nav>
-</div>
+<header class="topo">
+  <a class="marca" href="#topo" aria-label="Início"><span class="marca-icone" aria-hidden="true">GB</span><span class="marca-texto">Guilherme <span>Braz</span></span></a>
+  <nav class="menu" aria-label="Seções">
+    <a href="#sobre">Sobre</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#engenharia">Engenharia</a>
+    <a href="#projetos">Software</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="tema" id="tema" type="button" aria-label="Alternar tema claro e escuro" title="Tema claro / escuro">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
 </header>
 
-<section id="topo" style="background: #0E1B2C; color: #FFFFFF; border-bottom: 4px solid #F08A4B">
-<div style="max-width: 1180px; margin: 0 auto; padding: 88px 32px 104px; display: flex; flex-direction: column; gap: 28px">
-<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #F08A4B">Processos · Caldeiraria pesada · Software industrial</p>
-<h1 style="margin: 0; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.08; font-weight: 700; max-width: 900px">Planejo a fabricação de equipamentos pesados — e construo as ferramentas que tornam esse planejamento mais rápido.</h1>
-<p style="margin: 0; font-size: 19px; color: #C9D4E2; max-width: 720px">Sou Guilherme dos Santos Braz, técnico de processos de caldeiraria e usinagem na Sofir do Brasil, técnico em Eletrotécnica pelo CEFET-MG e graduando em Engenharia Mecânica pelo IFMG.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px">
-<a href="#projetos" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: #F08A4B; color: #0E1B2C; text-decoration: none; font-weight: 600; font-size: 16px">Ver projetos</a>
-<a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid #5B6F88; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px">LinkedIn</a>
-</div>
-</div>
+<main>
+
+<section class="saudacao" id="topo" aria-label="Apresentação">
+  <div class="avatar" aria-hidden="true">GB</div>
+  <span class="linha-topo">Processos · Caldeiraria pesada · Software industrial</span>
+  <h1>Planejo a fabricação de equipamentos pesados <em>e construo as ferramentas que tornam esse planejamento mais rápido.</em></h1>
+  <p>Sou Guilherme dos Santos Braz, técnico de processos de caldeiraria e usinagem na Sofir do Brasil, técnico em Eletrotécnica pelo CEFET-MG e graduando em Engenharia Mecânica pelo IFMG.</p>
+  <div class="acoes">
+    <a class="botao" href="#engenharia">Ver projetos</a>
+    <a class="botao-sec" href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <div class="tiles" aria-label="Resumo" style="width:100%">
+    <div class="tile"><span class="tile-rotulo">Base</span><span class="tile-valor">Contagem, Minas Gerais</span></div>
+    <div class="tile celeste"><span class="tile-rotulo">Setores</span><span class="tile-valor">Mineração · Siderurgia</span></div>
+    <div class="tile ok"><span class="tile-rotulo">Ferramentas</span><span class="tile-valor">Inventor · AutoCAD · Lantek · TOTVS Protheus · Excel</span></div>
+  </div>
 </section>
 
-<section aria-label="Resumo" style="background: #FFFFFF; border-bottom: 1px solid #D9DFE7">
-<div style="max-width: 1180px; margin: 0 auto; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Base</span>
-<span style="font-size: 16px; font-weight: 500">Contagem, Minas Gerais</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Setores</span>
-<span style="font-size: 16px; font-weight: 500">Mineração · Siderurgia</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">Engenharia</span>
-<span style="font-size: 16px; font-weight: 500">Inventor (análise de tensões) · AutoCAD · Lantek · TOTVS Protheus · Excel</span>
-</div>
-</div>
+<section id="sobre">
+  <div class="titulo-pagina"><span class="num">01</span><h2>Sobre</h2></div>
+  <div class="cartao sobre">
+    <p>Meu trabalho começa no desenho técnico e termina no chão de fábrica. Interpreto projetos de equipamentos de caldeiraria pesada, monto listas de materiais, detalho peças em CAD para programação de corte no Lantek, emito requisições de compra e ordens de produção e dou suporte técnico a caldeireiros, montadores e soldadores.</p>
+    <p>No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar software. Assim nasceu a ferramenta abaixo, um aplicativo de otimização de corte criado para suprir uma demanda que encontrei no meu próprio processo. De forma independente, também comecei a desenvolver projetos mecânicos para clientes, do conceito ao cálculo estrutural, colocando em prática o que estudo na engenharia.</p>
+    <p>Meu objetivo é me tornar um engenheiro mecânico completo, que domina o processo de fabricação e também sabe construir as ferramentas digitais para melhorá-lo.</p>
+  </div>
 </section>
 
-<section id="sobre" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 48px; display: flex; flex-wrap: wrap; gap: 32px 64px">
-<div style="flex: 1 1 260px">
-<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">01</p>
-<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Sobre</h2>
-</div>
-<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 18px; color: #26364B">
-<p style="margin: 0">Meu trabalho começa no desenho técnico e termina no chão de fábrica. Interpreto projetos de equipamentos de caldeiraria pesada, monto listas de materiais, detalho peças em CAD para programação de corte no Lantek, emito requisições de compra e ordens de produção e dou suporte técnico a caldeireiros, montadores e soldadores.</p>
-<p style="margin: 0">No meio desse fluxo, percebi que muitas tarefas repetitivas podiam virar software. Assim nasceu a ferramenta abaixo, um aplicativo de otimização de corte criado para suprir uma demanda que encontrei no meu próprio processo. De forma independente, também comecei a desenvolver projetos mecânicos para clientes, do conceito ao cálculo estrutural, colocando em prática o que estudo na engenharia.</p>
-<p style="margin: 0">Meu objetivo é me tornar um engenheiro mecânico completo, que domina o processo de fabricação e também sabe construir as ferramentas digitais para melhorá-lo.</p>
-</div>
+<section id="experiencia">
+  <div class="titulo-pagina"><span class="num">02</span><h2>Experiência e formação</h2></div>
+  <h3 class="subtitulo">Experiência</h3>
+  <ol class="linha">
+    <li class="cartao item">
+      <span class="data atual">mai/2026 – atual</span>
+      <h3>Técnico de Processos — Caldeiraria e Usinagem</h3>
+      <p class="empresa">Sofir do Brasil Construções Industriais · Contagem, MG</p>
+      <p class="desc">Promovido após a trajetória no PCP. Planejamento da fabricação de equipamentos de caldeiraria pesada para mineração e siderurgia, com análise e otimização de processos de caldeiraria e usinagem, detalhamento de peças para corte CNC no Lantek, requisições de compra com relatórios de chapas, gestão de ordens de produção e suporte técnico à fábrica em montagem, solda, acabamento, controle de qualidade e pintura.</p>
+    </li>
+    <li class="cartao item">
+      <span class="data">dez/2023 – abr/2026</span>
+      <h3>Auxiliar de Programação de Produção III → II (PCP)</h3>
+      <p class="empresa">Sofir do Brasil Construções Industriais · Contagem, MG</p>
+      <p class="desc">Interpretação de desenhos mecânicos, geração de listas de materiais, detalhamento e redesenho de peças e conjuntos em AutoCAD 2D e 3D, criação de ordens de produção e solicitações de compra no TOTVS Protheus.</p>
+    </li>
+    <li class="cartao item">
+      <span class="data">ago/2022 – out/2022</span>
+      <h3>Auxiliar de Eletricista</h3>
+      <p class="empresa">SWE Engenharia Elétrica e Automação · Belo Horizonte, MG</p>
+      <p class="desc">Suporte em projetos de engenharia elétrica e automação industrial e execução de instalações sob supervisão técnica.</p>
+    </li>
+    <li class="cartao item">
+      <span class="data">jul/2019 – jul/2021</span>
+      <h3>Aprendiz Industrial</h3>
+      <p class="empresa">Belgo Bekaert Arames · Contagem, MG</p>
+      <p class="desc">Primeiro contato com a indústria metalúrgica de grande porte.</p>
+    </li>
+  </ol>
+
+  <h3 class="subtitulo" style="margin-top:36px">Formação</h3>
+  <div class="formacao">
+    <div class="tile"><span class="data">em andamento</span><span class="tile-valor" style="margin-top:6px">Engenharia Mecânica</span><span class="tile-rotulo">IFMG — Instituto Federal de Minas Gerais</span></div>
+    <div class="tile ok"><span class="data atual">concluído</span><span class="tile-valor" style="margin-top:6px">Técnico em Eletrotécnica</span><span class="tile-rotulo">CEFET-MG</span></div>
+  </div>
 </section>
 
-<section id="experiencia" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px; display: flex; flex-wrap: wrap; gap: 32px 64px">
-<div style="flex: 1 1 260px">
-<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">02</p>
-<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Experiência e formação</h2>
-</div>
-<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
-
-<h4 style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4410E">Experiência</h4>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Técnico de Processos — Caldeiraria e Usinagem</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">mai/2026 – atual</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">Sofir do Brasil Construções Industriais · Contagem, MG</p>
-<p style="margin: 0; font-size: 17px; color: #26364B">Promovido após a trajetória no PCP. Planejamento da fabricação de equipamentos de caldeiraria pesada para mineração e siderurgia, com análise e otimização de processos de caldeiraria e usinagem, detalhamento de peças para corte CNC no Lantek, requisições de compra com relatórios de chapas, gestão de ordens de produção e suporte técnico à fábrica em montagem, solda, acabamento, controle de qualidade e pintura.</p>
-</article>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Auxiliar de Programação de Produção III → II (PCP)</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">dez/2023 – abr/2026</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">Sofir do Brasil Construções Industriais · Contagem, MG</p>
-<p style="margin: 0; font-size: 17px; color: #26364B">Interpretação de desenhos mecânicos, geração de listas de materiais, detalhamento e redesenho de peças e conjuntos em AutoCAD 2D e 3D, criação de ordens de produção e solicitações de compra no TOTVS Protheus.</p>
-</article>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Auxiliar de Eletricista</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">ago/2022 – out/2022</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">SWE Engenharia Elétrica e Automação · Belo Horizonte, MG</p>
-<p style="margin: 0; font-size: 17px; color: #26364B">Suporte em projetos de engenharia elétrica e automação industrial e execução de instalações sob supervisão técnica.</p>
-</article>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; border-bottom: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Aprendiz Industrial</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">jul/2019 – jul/2021</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">Belgo Bekaert Arames · Contagem, MG</p>
-<p style="margin: 0; font-size: 17px; color: #26364B">Primeiro contato com a indústria metalúrgica de grande porte.</p>
-</article>
-
-<h4 style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4410E">Formação</h4>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Engenharia Mecânica</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">em andamento</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">IFMG — Instituto Federal de Minas Gerais</p>
-</article>
-
-<article style="padding: 28px 0; border-top: 1px solid #C9D2DD; border-bottom: 1px solid #C9D2DD; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
-<h3 style="margin: 0; font-size: 21px">Técnico em Eletrotécnica</h3>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5A70">concluído</span>
-</div>
-<p style="margin: 0; font-weight: 500; color: #4A5A70">CEFET-MG</p>
-</article>
-
-</div>
+<section aria-labelledby="fluxo-t">
+  <div class="titulo-pagina"><h2 id="fluxo-t">Do desenho à ordem de produção</h2><p>O caminho de um equipamento pelo meu processo, etapa por etapa.</p></div>
+  <div class="barra" aria-hidden="true"><span></span></div>
+  <ol class="fluxo">
+    <li class="cartao"><span class="passo">1</span><b>Interpretação do desenho</b><span>Leitura do projeto 2D/3D e análise de escopo</span></li>
+    <li class="cartao"><span class="passo">2</span><b>Lista de materiais</b><span>Levantamento dos materiais em Excel</span></li>
+    <li class="cartao"><span class="passo">3</span><b>Detalhamento para corte</b><span>Peças em CAD e entrada no Lantek</span></li>
+    <li class="cartao"><span class="passo">4</span><b>Compras</b><span>Requisições com relatórios de chapas e corte</span></li>
+    <li class="cartao"><span class="passo">5</span><b>Ordens de produção</b><span>Criação e detalhamento das OPs</span></li>
+    <li class="cartao"><span class="passo">6</span><b>Suporte à fábrica</b><span>Dúvidas técnicas de montagem e solda</span></li>
+  </ol>
 </section>
 
-<section aria-label="Como eu trabalho" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px">
-<h3 style="margin: 0 0 24px; font-size: 22px">Do desenho à ordem de produção</h3>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 2px; background: #C9D2DD; border: 1px solid #C9D2DD">
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">01</span>
-<span style="font-weight: 600">Interpretação do desenho</span>
-<span style="font-size: 15px; color: #4A5A70">Leitura do projeto 2D/3D e análise de escopo</span>
-</li>
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">02</span>
-<span style="font-weight: 600">Lista de materiais</span>
-<span style="font-size: 15px; color: #4A5A70">Levantamento dos materiais em Excel</span>
-</li>
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">03</span>
-<span style="font-weight: 600">Detalhamento para corte</span>
-<span style="font-size: 15px; color: #4A5A70">Peças em CAD e entrada no Lantek</span>
-</li>
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">04</span>
-<span style="font-weight: 600">Compras</span>
-<span style="font-size: 15px; color: #4A5A70">Requisições com relatórios de chapas e corte</span>
-</li>
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">05</span>
-<span style="font-weight: 600">Ordens de produção</span>
-<span style="font-size: 15px; color: #4A5A70">Criação e detalhamento das OPs</span>
-</li>
-<li style="background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">06</span>
-<span style="font-weight: 600">Suporte à fábrica</span>
-<span style="font-size: 15px; color: #4A5A70">Dúvidas técnicas de montagem e solda</span>
-</li>
-</ol>
+<section id="engenharia">
+  <div class="titulo-pagina"><span class="num">03</span><h2>Projetos de engenharia</h2><p>Projeto mecânico do conceito ao cálculo, desenvolvido de forma independente para cliente.</p></div>
+  <article class="cartao projeto">
+    <div class="tc-stage" id="tc-stage">
+      <div class="tc-loading" id="tc-loading">carregando modelo 3D…</div>
+      <div class="tc-chip" id="c-cond">Condensadora <small>30 kg · 4 pés</small></div>
+      <div class="tc-chip" id="c-giro">Giro de 180° <small>pivô central</small></div>
+      <div class="tc-chip" id="c-pivo">Pivô Ø1¼" <small>tubo Ø44,45 × 3</small></div>
+      <div class="tc-chip" id="c-trava">Trava baioneta <small>pino Ø18</small></div>
+      <div class="tc-chip" id="c-mf">Mão francesa <small>apoio da ponta</small></div>
+      <div class="tc-ctrl">
+        <div class="tc-seg" role="group" aria-label="Posição da plataforma">
+          <button type="button" data-pos="work" aria-pressed="true">Trabalho</button>
+          <button type="button" data-pos="mid" aria-pressed="false">Em movimento</button>
+          <button type="button" data-pos="maint" aria-pressed="false">Manutenção</button>
+        </div>
+        <span class="tc-angle" aria-live="polite">giro <b id="tc-deg">180°</b> · <span id="tc-state">travada</span></span>
+      </div>
+      <span class="tc-hint">arraste para girar a vista</span>
+    </div>
+    <div class="projeto-corpo">
+      <div class="selos"><span class="selo royal">TC-2025-01</span><span class="selo atencao">Em verificação estrutural</span></div>
+      <h3>Suporte articulado para condensadora de ar-condicionado</h3>
+      <p class="resumo">Suporte de fachada que gira 180° em torno de um pivô central, alternando entre a posição de trabalho e a de manutenção. O técnico acessa o equipamento sem andaime nem trabalho em altura fora da estrutura.</p>
+      <dl class="numeros">
+        <div><dt>Carga</dt><dd>30 kg</dd></div>
+        <div><dt>Vento</dt><dd>140 km/h</dd></div>
+        <div><dt>Giro</dt><dd>180°</dd></div>
+        <div><dt>Casos</dt><dd>4</dd></div>
+      </dl>
+      <ul class="pilulas">
+        <li>Modelagem 3D e conjunto soldado no Inventor, com desenhos de fabricação em A3</li>
+        <li>Carga de vento pela NBR 6123 nas duas orientações do equipamento</li>
+        <li>Análise de tensões em quatro casos de carga, com contato pino-bucha e reações verificadas</li>
+        <li>Trava tipo baioneta para fixar a plataforma em 0° e 180°</li>
+        <li>Memória de cálculo e apresentação 3D interativa para o cliente</li>
+      </ul>
+      <p class="nota"><strong>O que aprendi:</strong> [EX.: COMO UMA CHAPA SOLDADA EM TUBO DE PAREDE FINA VIRA O PONTO CRÍTICO, E A IMPORTÂNCIA DE VALIDAR CONTATOS E UNIDADES NA SIMULAÇÃO]</p>
+      <p class="stack">Inventor · Análise de tensões · NBR 6123 · ASTM A36 · SAE 1020 · Three.js</p>
+      <p class="nota" style="font-size:.82rem">Projeto e cálculo de minha autoria; liberação final com ART de engenheiro habilitado.</p>
+    </div>
+  </article>
 </section>
 
-<section id="engenharia" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 48px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
-<div>
-<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">03</p>
-<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Projetos de engenharia</h2>
-</div>
-<p style="margin: 0; max-width: 460px; color: #4A5A70; font-size: 16px">Projeto mecânico do conceito ao cálculo, desenvolvido de forma independente para cliente.</p>
-</div>
-
-<article style="background: #FFFFFF; border: 1px solid #D9DFE7; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
-<div class="tc-stage" id="tc-stage">
-<div class="tc-loading" id="tc-loading">carregando modelo 3D…</div>
-<div class="tc-chip" id="c-cond">Condensadora <small>30 kg · 4 pés</small></div>
-<div class="tc-chip" id="c-giro">Giro de 180° <small>pivô central</small></div>
-<div class="tc-chip" id="c-pivo">Pivô Ø1¼" <small>tubo Ø44,45 × 3</small></div>
-<div class="tc-chip" id="c-trava">Trava baioneta <small>pino Ø18</small></div>
-<div class="tc-chip" id="c-mf">Mão francesa <small>apoio da ponta</small></div>
-<div class="tc-ctrl">
-<div class="tc-seg" role="group" aria-label="Posição da plataforma">
-<button type="button" data-pos="work" aria-pressed="true">Trabalho</button>
-<button type="button" data-pos="mid" aria-pressed="false">Em movimento</button>
-<button type="button" data-pos="maint" aria-pressed="false">Manutenção</button>
-</div>
-<span class="tc-angle" aria-live="polite">giro <b id="tc-deg">180°</b> · <span id="tc-state">travada</span></span>
-</div>
-<span class="tc-hint">arraste para girar a vista</span>
-</div>
-<div style="padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">TC-2025-01</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 4px 10px; border: 1px solid #0E1B2C">Em verificação estrutural</span>
-</div>
-<h3 style="margin: 0; font-size: 26px; line-height: 1.2">Suporte articulado para condensadora de ar-condicionado</h3>
-<p style="margin: 0; font-size: 16px; color: #26364B">Suporte de fachada que gira 180° em torno de um pivô central, alternando entre a posição de trabalho e a de manutenção. O técnico acessa o equipamento sem andaime nem trabalho em altura fora da estrutura.</p>
-<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #26364B">
-<li>Modelagem 3D e conjunto soldado no Inventor, com desenhos de fabricação em A3</li>
-<li>Carga de vento pela NBR 6123 nas duas orientações do equipamento</li>
-<li>Análise de tensões em quatro casos de carga, com contato pino-bucha e reações verificadas</li>
-<li>Trava tipo baioneta para fixar a plataforma em 0° e 180°</li>
-<li>Memória de cálculo e apresentação 3D interativa para o cliente</li>
-</ul>
-<dl style="margin: 4px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 2px; background: #C9D2DD; border: 1px solid #C9D2DD">
-<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
-<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Carga</dt>
-<dd style="margin: 0; font-size: 20px; font-weight: 600">30 kg</dd>
-</div>
-<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
-<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Vento</dt>
-<dd style="margin: 0; font-size: 20px; font-weight: 600">140 km/h</dd>
-</div>
-<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
-<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Giro</dt>
-<dd style="margin: 0; font-size: 20px; font-weight: 600">180°</dd>
-</div>
-<div style="background: #F2F4F7; padding: 14px; display: flex; flex-direction: column; gap: 2px">
-<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A70">Casos</dt>
-<dd style="margin: 0; font-size: 20px; font-weight: 600">4</dd>
-</div>
-</dl>
-<p style="margin: 0; font-size: 15px; color: #4A5A70"><strong style="color: #26364B">O que aprendi:</strong> [EX.: COMO UMA CHAPA SOLDADA EM TUBO DE PAREDE FINA VIRA O PONTO CRÍTICO, E A IMPORTÂNCIA DE VALIDAR CONTATOS E UNIDADES NA SIMULAÇÃO]</p>
-<p style="margin: auto 0 0; padding-top: 12px; border-top: 1px solid #E4E9EF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">Inventor · Análise de tensões · NBR 6123 · ASTM A36 · SAE 1020 · Three.js</p>
-<p style="margin: 0; font-size: 13px; color: #4A5A70">Projeto e cálculo de minha autoria; liberação final com ART de engenheiro habilitado.</p>
-</div>
-</article>
+<section id="projetos">
+  <div class="titulo-pagina"><span class="num">04</span><h2>Projeto de software</h2><p>Ferramenta criada a partir de uma demanda real do meu processo, hoje distribuída como produto.</p></div>
+  <article class="cartao projeto">
+    <div class="projeto-corpo">
+      <img class="logo-pt" src="https://projtec1d-site.vercel.app/logo.png" alt="PROJTEC 1D">
+      <div class="selos"><span class="selo royal">Produto comercial</span><span class="selo">v1.5.3</span></div>
+      <h3>PROJTEC 1D</h3>
+      <p class="resumo" style="font-weight:500;color:var(--tinta)">Otimização de corte linear de perfis e barras</p>
+      <p class="resumo">Calcula o melhor aproveitamento das barras (algoritmo First-Fit Decreasing), considera as sobras já em estoque, gera relatório em PDF vetorial e imprime etiquetas direto na impressora Zebra. Organiza o histórico de trabalhos por commessa, com numeração automática de RCs, e funciona em equipe, com banco compartilhado entre os computadores da rede.</p>
+      <ul class="pilulas">
+        <li>Rendimento e retalho calculados na hora, por relatório</li>
+        <li>Etiquetas impressas direto na Zebra, sem salvar arquivo</li>
+        <li>Login, licenciamento e pagamento por assinatura</li>
+        <li>Instalador para Windows e atualização automática</li>
+      </ul>
+      <p class="nota"><strong>Resultado:</strong> [EX.: X% DE MELHORA NO APROVEITAMENTO / TEMPO ECONOMIZADO POR TRABALHO]</p>
+      <p class="stack">Python · PySide6 · Supabase · Vercel · Mercado Pago · ZPL · Inno Setup</p>
+      <a class="botao" href="https://projtec1d-site.vercel.app" target="_blank" rel="noopener">Acessar o site ↗</a>
+    </div>
+    <div class="telas">
+      <figure>
+        <img src="https://projtec1d-site.vercel.app/screenshot-inicio.jpg" alt="Tela inicial do PROJTEC 1D com o explorador de trabalhos" loading="lazy">
+        <figcaption>Tela inicial · explorador de trabalhos organizado por projeto</figcaption>
+      </figure>
+      <figure>
+        <img src="https://projtec1d-site.vercel.app/screenshot-relatorio.jpg" alt="Relatório de corte do PROJTEC 1D" loading="lazy">
+        <figcaption>Relatório de corte · barras, rendimento e retalho na mesma tela</figcaption>
+      </figure>
+    </div>
+  </article>
 </section>
 
-<section id="projetos" style="max-width: 1180px; margin: 0 auto; padding: 48px 32px 96px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
-<div>
-<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">04</p>
-<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Projeto de software</h2>
-</div>
-<p style="margin: 0; max-width: 460px; color: #4A5A70; font-size: 16px">Ferramenta criada a partir de uma demanda real do meu processo, hoje distribuída como produto.</p>
-</div>
-
-<article style="background: #FFFFFF; border: 1px solid #D9DFE7; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
-<div style="padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
-<img src="https://projtec1d-site.vercel.app/logo.png" alt="" style="height: 40px; width: auto">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 4px 10px; background: #0E1B2C; color: #FFFFFF">Produto comercial · v1.5.3</span>
-</div>
-<h3 style="margin: 0; font-size: 28px; line-height: 1.2">PROJTEC 1D</h3>
-<p style="margin: 0; font-weight: 500; font-size: 18px">Otimização de corte linear de perfis e barras</p>
-<p style="margin: 0; font-size: 16px; color: #26364B">Calcula o melhor aproveitamento das barras (algoritmo First-Fit Decreasing), considera as sobras já em estoque, gera relatório em PDF vetorial e imprime etiquetas direto na impressora Zebra. Organiza o histórico de trabalhos por commessa, com numeração automática de RCs, e funciona em equipe, com banco compartilhado entre os computadores da rede.</p>
-<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #26364B">
-<li>Rendimento e retalho calculados na hora, por relatório</li>
-<li>Etiquetas impressas direto na Zebra, sem salvar arquivo</li>
-<li>Login, licenciamento e pagamento por assinatura</li>
-<li>Instalador para Windows e atualização automática</li>
-</ul>
-<p style="margin: 0; font-size: 16px; color: #26364B"><strong>Resultado:</strong> [EX.: X% DE MELHORA NO APROVEITAMENTO / TEMPO ECONOMIZADO POR TRABALHO]</p>
-<p style="margin: 0; padding-top: 12px; border-top: 1px solid #E4E9EF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A5A70">Python · PySide6 · Supabase · Vercel · Mercado Pago · ZPL · Inno Setup</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 8px">
-<a href="https://projtec1d-site.vercel.app" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #0E1B2C; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px">Acessar o site ↗</a>
-</div>
-</div>
-<div style="background: #E4E9EF; padding: 28px; display: flex; flex-direction: column; gap: 24px; justify-content: center">
-<figure style="margin: 0">
-<img src="https://projtec1d-site.vercel.app/screenshot-inicio.jpg" alt="Tela inicial do PROJTEC 1D com o explorador de trabalhos" loading="lazy" style="display: block; width: 100%; height: auto; border: 1px solid #D9DFE7; background: #E4E9EF">
-<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #4A5A70; padding: 10px 2px 0">Tela inicial · explorador de trabalhos organizado por projeto</figcaption>
-</figure>
-<figure style="margin: 0">
-<img src="https://projtec1d-site.vercel.app/screenshot-relatorio.jpg" alt="Relatório de corte do PROJTEC 1D" loading="lazy" style="display: block; width: 100%; height: auto; border: 1px solid #D9DFE7; background: #E4E9EF">
-<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #4A5A70; padding: 10px 2px 0">Relatório de corte · barras, rendimento e retalho na mesma tela</figcaption>
-</figure>
-</div>
-</article>
+<section id="contato">
+  <div class="titulo-pagina"><span class="num">05</span><h2>Contato</h2></div>
+  <div class="contatos">
+    <a class="cartao contato" href="mailto:guisbraz4@gmail.com"><span>E-mail</span><b>guisbraz4@gmail.com</b></a>
+    <a class="cartao contato" href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener"><span>LinkedIn</span><b>guilherme-santos-66b8162a0 ↗</b></a>
+    <a class="cartao contato" href="https://github.com/GuisBraz" target="_blank" rel="noopener"><span>GitHub</span><b>github.com/GuisBraz ↗</b></a>
+  </div>
+  <p class="copyright">© 2026 Guilherme dos Santos Braz</p>
 </section>
 
-<section id="contato" style="background: #FFFFFF; border-top: 1px solid #D9DFE7">
-<div style="max-width: 1180px; margin: 0 auto; padding: 88px 32px; display: flex; flex-wrap: wrap; gap: 32px 64px">
-<div style="flex: 1 1 260px">
-<p style="margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4410E">05</p>
-<h2 style="margin: 0; font-size: 34px; line-height: 1.15">Contato</h2>
-</div>
-<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid #D9DFE7">
-<a href="mailto:guisbraz4@gmail.com" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">E-mail</span>
-<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">guisbraz4@gmail.com</span>
-</a>
-<a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">LinkedIn</span>
-<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">linkedin.com/in/guilherme-santos-66b8162a0 ↗</span>
-</a>
-<a href="https://github.com/GuisBraz" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid #D9DFE7; text-decoration: none">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5A70">GitHub</span>
-<span style="font-size: 18px; font-weight: 500; overflow-wrap: anywhere">github.com/GuisBraz ↗</span>
-</a>
-</div>
-</div>
-<div style="border-top: 1px solid #D9DFE7">
-<p style="max-width: 1180px; margin: 0 auto; padding: 24px 32px; font-size: 14px; color: #4A5A70">© 2026 Guilherme dos Santos Braz</p>
-</div>
-</section>
+</main>
 
-</div>
+<footer class="rodape-autor">Desenvolvido por <a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener">Guilherme dos Santos Braz</a> — Técnico de processos e estudante de engenharia mecânica</footer>
+
+<script>
+/* tema claro/escuro e menu que acompanha a rolagem */
+(function(){
+  const root=document.documentElement, KEY='gb-tema';
+  try{const t=localStorage.getItem(KEY);if(t)root.dataset.theme=t}catch(e){}
+  document.getElementById('tema').addEventListener('click',()=>{
+    const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark';try{localStorage.setItem(KEY,root.dataset.theme)}catch(e){}
+  });
+  const links=[...document.querySelectorAll('.menu a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('ativo',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>io.observe(s));
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
