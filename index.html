@@ -164,6 +164,34 @@ section{padding:72px 0 8px}
 .tc-angle b{color:var(--tinta);font-weight:600}
 .tc-hint{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:.75rem;color:var(--tinta-3);pointer-events:none}
 
+/* desenhos de fabricação */
+.desenhos{width:100%;max-width:900px;display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.desenhos h4{margin:0;font-size:1rem;font-weight:600}
+.desenhos>p{margin:0;font-size:.88rem;color:var(--tinta-2)}
+.folhas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.folha{all:unset;box-sizing:border-box;cursor:zoom-in;display:flex;flex-direction:column;width:100%;background:var(--superficie);border:1px solid var(--borda);border-radius:var(--raio-p);overflow:hidden;transition:transform .15s,border-color .15s,box-shadow .15s}
+.folha:hover{transform:translateY(-2px);border-color:var(--celeste);box-shadow:var(--sombra)}
+.folha:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+.folha img{display:block;width:100%;aspect-ratio:4677/3308;object-fit:cover;background:#fff}
+.folha span{padding:8px 10px;font-size:.8rem;text-align:center;border-top:1px solid var(--borda)}
+.folha b{display:block;font-size:.72rem;color:var(--royal);font-weight:600;letter-spacing:.03em}
+.visor{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;background:#0F172E}
+.visor.aberto{display:flex}
+.visor-barra{display:flex;align-items:center;gap:8px;padding:10px 14px;color:#E6ECF8;flex-wrap:wrap}
+.visor-barra .tit{flex:1;min-width:0;font-weight:600;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.visor-barra .tit small{color:#A7B3CC;font-weight:400;margin-left:8px}
+.vbtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#E6ECF8;min-width:38px;height:38px;padding:0 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
+.vbtn:hover{background:rgba(255,255,255,.16);text-decoration:none}
+.vbtn:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+.visor-area{position:relative;flex:1;overflow:hidden;touch-action:none;cursor:grab}
+.visor-area.arrastando{cursor:grabbing}
+.visor-area img{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;background:#fff;user-select:none;-webkit-user-drag:none;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.visor-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(15,23,46,.7);color:#fff;font-size:1.3rem;cursor:pointer}
+.visor-nav:hover{background:rgba(36,83,199,.85)}
+.visor-nav.ant{left:12px}.visor-nav.prox{right:12px}
+.visor-dica{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:rgba(15,23,46,.8);border-radius:999px;padding:5px 12px;white-space:nowrap;color:#A7B3CC;font-size:.75rem;pointer-events:none}
+@media (max-width:760px){.folhas{grid-template-columns:repeat(2,minmax(0,1fr))}.visor-barra .tit small{display:none}}
+
 /* contato */
 .contatos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
 .contato{padding:22px 16px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;border-top:3px solid var(--celeste);color:var(--tinta);transition:transform .15s,border-color .15s;min-width:0}
@@ -325,6 +353,16 @@ section{padding:72px 0 8px}
         <li>Trava tipo baioneta para fixar a plataforma em 0° e 180°</li>
         <li>Memória de cálculo e apresentação 3D interativa para o cliente</li>
       </ul>
+      <div class="desenhos" id="desenhos">
+        <h4>Desenhos de fabricação</h4>
+        <p>Folhas A2 do projeto. Toque numa folha para abrir, aproximar e arrastar.</p>
+        <ul class="folhas">
+          <li><button class="folha" type="button" data-i="0"><img src="desenhos/TC-2025-01-00-mini.webp" alt="Folha TC-2025-01-00, conjunto geral" loading="lazy"><span><b>TC-2025-01-00</b>Conjunto geral</span></button></li>
+          <li><button class="folha" type="button" data-i="1"><img src="desenhos/TC-2025-01-01-mini.webp" alt="Folha TC-2025-01-01, plataforma soldada" loading="lazy"><span><b>TC-2025-01-01</b>Plataforma soldada</span></button></li>
+          <li><button class="folha" type="button" data-i="2"><img src="desenhos/TC-2025-01-02-mini.webp" alt="Folha TC-2025-01-02, suportes do pivô e buchas" loading="lazy"><span><b>TC-2025-01-02</b>Suportes do pivô e buchas</span></button></li>
+          <li><button class="folha" type="button" data-i="3"><img src="desenhos/TC-2025-01-05-mini.webp" alt="Folha TC-2025-01-05, mãos francesas e pino-trava" loading="lazy"><span><b>TC-2025-01-05</b>Mãos francesas e pino-trava</span></button></li>
+        </ul>
+      </div>
       <p class="nota"><strong>O que aprendi:</strong> [EX.: COMO UMA CHAPA SOLDADA EM TUBO DE PAREDE FINA VIRA O PONTO CRÍTICO, E A IMPORTÂNCIA DE VALIDAR CONTATOS E UNIDADES NA SIMULAÇÃO]</p>
       <p class="stack">Inventor · Análise de tensões · NBR 6123 · ASTM A36 · SAE 1020 · Three.js</p>
     </div>
@@ -375,8 +413,66 @@ section{padding:72px 0 8px}
 
 </main>
 
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Visualizador de desenhos">
+  <div class="visor-barra">
+    <span class="tit" id="v-tit">TC-2025-01-00</span>
+    <span class="vbtn" id="v-cont" style="cursor:default">1 / 4</span>
+    <button class="vbtn" type="button" id="v-menos" aria-label="Diminuir zoom">−</button>
+    <button class="vbtn" type="button" id="v-ajustar">Ajustar</button>
+    <button class="vbtn" type="button" id="v-mais" aria-label="Aumentar zoom">+</button>
+    <a class="vbtn" id="v-real" href="#" target="_blank" rel="noopener">Tamanho real ↗</a>
+    <button class="vbtn" type="button" id="v-fechar" aria-label="Fechar">✕</button>
+  </div>
+  <div class="visor-area" id="v-area">
+    <img id="v-img" alt="" draggable="false">
+    <button class="visor-nav ant" type="button" id="v-ant" aria-label="Folha anterior">‹</button>
+    <button class="visor-nav prox" type="button" id="v-prox" aria-label="Próxima folha">›</button>
+    <span class="visor-dica">roda do mouse ou pinça para aproximar · arraste para mover · ← → troca de folha</span>
+  </div>
+</div>
+
 <footer class="rodape-autor">Desenvolvido por <a href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener">Guilherme dos Santos Braz</a> — Técnico de processos e estudante de engenharia mecânica</footer>
 
+<script>
+/* visualizador dos desenhos: zoom (roda, pinça, botões), arrastar e trocar de folha */
+(function(){
+  const F=[['TC-2025-01-00','Conjunto geral'],['TC-2025-01-01','Plataforma soldada'],['TC-2025-01-02','Suportes do pivô e buchas'],['TC-2025-01-05','Mãos francesas e pino-trava']];
+  const visor=document.getElementById('visor'),area=document.getElementById('v-area'),img=document.getElementById('v-img');
+  const tit=document.getElementById('v-tit'),cont=document.getElementById('v-cont'),real=document.getElementById('v-real');
+  let i=0,s=1,x=0,y=0,fit=1,ultimoFoco=null;
+  const W=4677,H=3308;
+  function aplicar(){img.style.transform=`translate(${x}px,${y}px) scale(${s})`}
+  function ajustar(){const r=area.getBoundingClientRect();fit=Math.min((r.width-24)/W,(r.height-24)/H);s=fit;x=(r.width-W*s)/2;y=(r.height-H*s)/2;aplicar()}
+  function zoom(f,cx,cy){const r=area.getBoundingClientRect();if(cx==null){cx=r.width/2;cy=r.height/2}
+    const ns=Math.min(Math.max(s*f,fit*.8),fit*12);x=cx-(cx-x)*ns/s;y=cy-(cy-y)*ns/s;s=ns;aplicar()}
+  function mostrar(k){i=(k+F.length)%F.length;const [c,n]=F[i];img.style.width=W+'px';img.style.height=H+'px';
+    img.src='desenhos/'+c+'.webp';img.alt='Desenho '+c+', '+n;tit.innerHTML=c+'<small>'+n+'</small>';cont.textContent=(i+1)+' / '+F.length;real.href='desenhos/'+c+'.webp';ajustar()}
+  function abrir(k){ultimoFoco=document.activeElement;visor.classList.add('aberto');document.body.style.overflow='hidden';mostrar(k);document.getElementById('v-fechar').focus()}
+  function fechar(){visor.classList.remove('aberto');document.body.style.overflow='';if(ultimoFoco)ultimoFoco.focus()}
+  document.querySelectorAll('.folha').forEach(b=>b.addEventListener('click',()=>abrir(+b.dataset.i)));
+  document.getElementById('v-fechar').onclick=fechar;
+  document.getElementById('v-ant').onclick=()=>mostrar(i-1);
+  document.getElementById('v-prox').onclick=()=>mostrar(i+1);
+  document.getElementById('v-mais').onclick=()=>zoom(1.4);
+  document.getElementById('v-menos').onclick=()=>zoom(1/1.4);
+  document.getElementById('v-ajustar').onclick=ajustar;
+  addEventListener('resize',()=>{if(visor.classList.contains('aberto'))ajustar()});
+  addEventListener('keydown',e=>{if(!visor.classList.contains('aberto'))return;
+    if(e.key==='Escape')fechar();else if(e.key==='ArrowRight')mostrar(i+1);else if(e.key==='ArrowLeft')mostrar(i-1);
+    else if(e.key==='+'||e.key==='=')zoom(1.4);else if(e.key==='-')zoom(1/1.4);else if(e.key==='0')ajustar()});
+  area.addEventListener('wheel',e=>{e.preventDefault();const r=area.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+  area.addEventListener('dblclick',e=>{const r=area.getBoundingClientRect();if(s>fit*1.5)ajustar();else zoom(3,e.clientX-r.left,e.clientY-r.top)});
+  const pts=new Map();let d0=0,s0=1;
+  area.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;area.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});area.classList.add('arrastando');
+    if(pts.size===2){const [a,b]=[...pts.values()];d0=Math.hypot(a.x-b.x,a.y-b.y);s0=s}});
+  area.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;const p=pts.get(e.pointerId),r=area.getBoundingClientRect();
+    if(pts.size===1){x+=e.clientX-p.x;y+=e.clientY-p.y;aplicar()}
+    pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pts.size===2){const [a,b]=[...pts.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);zoom((s0*d/d0)/s,(a.x+b.x)/2-r.left,(a.y+b.y)/2-r.top)}});
+  const solta=e=>{pts.delete(e.pointerId);if(!pts.size)area.classList.remove('arrastando')};
+  area.addEventListener('pointerup',solta);area.addEventListener('pointercancel',solta);
+})();
+</script>
 <script>
 /* tema claro/escuro e menu que acompanha a rolagem */
 (function(){
