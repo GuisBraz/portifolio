@@ -164,6 +164,31 @@ section{padding:72px 0 8px}
 .tc-angle b{color:var(--tinta);font-weight:600}
 .tc-hint{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:.75rem;color:var(--tinta-3);pointer-events:none}
 
+/* habilidades e ferramentas */
+.habil{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.habil-tit{display:inline-block;font-size:1.35rem;font-weight:600;letter-spacing:-.01em;padding-bottom:4px;border-bottom:2px solid var(--celeste)}
+.habil-grade{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;width:100%}
+.hab{grid-column:span 2;padding:20px 18px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;border-top:3px solid var(--royal);min-width:0}
+.hab h3{font-size:1.02rem}
+.hab p{margin:0;font-size:.9rem;color:var(--tinta-2)}
+.hab-img{grid-column:span 3;padding:0;overflow:hidden}
+.hab-txt{padding:16px 20px 20px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.hab-sigla{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--royal);background:var(--royal-claro)}
+.hab:nth-child(3) .hab-sigla,.hab:nth-child(4) .hab-sigla{color:var(--celeste);background:var(--celeste-claro)}
+.hab:nth-child(5) .hab-sigla{color:var(--ok);background:var(--ok-claro)}
+.hab-img .hab-sigla{margin-top:-36px;border:3px solid var(--superficie);width:46px;height:46px;position:relative}
+.hab-foto{all:unset;box-sizing:border-box;position:relative;display:block;width:100%;height:220px;overflow:hidden;border-bottom:1px solid var(--borda)}
+.hab-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.hab-foto.inv{background:linear-gradient(180deg,#b8c6d9 0%,#cbd8e9 50%,#b9c6da 100%)}
+.hab-foto.inv img{width:auto;height:100%;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)}
+.hab-foto.cad{cursor:zoom-in;background:#fff}
+.hab-foto.cad img{object-position:30% 30%;transform:scale(1.6);transform-origin:30% 30%}
+.hab-foto.cad:hover img{transform:scale(1.75)}
+.hab-foto.cad:focus-visible{outline:2px solid var(--celeste);outline-offset:-2px}
+.hab-ver{position:absolute;right:10px;bottom:10px;background:var(--royal);color:#fff;font-size:.78rem;font-weight:600;border-radius:999px;padding:5px 12px}
+@media (max-width:900px){.habil-grade{grid-template-columns:repeat(2,minmax(0,1fr))}.hab,.hab-img{grid-column:span 1}.hab:last-child{grid-column:span 2}}
+@media (max-width:560px){.habil-grade{grid-template-columns:minmax(0,1fr)}.hab,.hab-img,.hab:last-child{grid-column:span 1}}
+
 /* desenhos de fabricação */
 .desenhos{width:100%;max-width:900px;display:flex;flex-direction:column;gap:12px;margin-top:6px}
 .desenhos h4{margin:0;font-size:1rem;font-weight:600}
@@ -250,10 +275,21 @@ section{padding:72px 0 8px}
     <a class="botao" href="#engenharia">Ver projetos</a>
     <a class="botao-sec" href="https://www.linkedin.com/in/guilherme-santos-66b8162a0" target="_blank" rel="noopener">LinkedIn ↗</a>
   </div>
-  <div class="tiles" aria-label="Resumo" style="width:100%">
-    <div class="tile"><span class="tile-rotulo">Base</span><span class="tile-valor">Contagem, Minas Gerais</span></div>
-    <div class="tile celeste"><span class="tile-rotulo">Setores</span><span class="tile-valor">Mineração · Siderurgia</span></div>
-    <div class="tile ok"><span class="tile-rotulo">Ferramentas</span><span class="tile-valor">Inventor · AutoCAD · Lantek · TOTVS Protheus · Excel</span></div>
+  <div class="habil" aria-labelledby="habil-t" style="width:100%">
+    <h2 class="habil-tit" id="habil-t">Habilidades e ferramentas</h2>
+    <div class="habil-grade">
+      <article class="cartao hab hab-img">
+        <div class="hab-foto inv"><img src="desenhos/inventor-conjunto-soldado.webp" alt="Conjunto soldado modelado em 3D no Autodesk Inventor" loading="lazy" width="512" height="512"></div>
+        <div class="hab-txt"><span class="hab-sigla">IV</span><h3>Autodesk Inventor</h3><p>Modelagem 3D de peças e conjuntos soldados, desenhos de fabricação e análise de tensões por elementos finitos.</p></div>
+      </article>
+      <article class="cartao hab hab-img">
+        <button class="hab-foto cad" type="button" data-desenho="1" aria-label="Abrir os desenhos no visualizador"><img src="desenhos/TC-2025-01-01-mini.webp" alt="Folha de desenho técnico com vistas cotadas e lista de material" loading="lazy" width="720" height="509"><span class="hab-ver">ver desenhos ↗</span></button>
+        <div class="hab-txt"><span class="hab-sigla">CAD</span><h3>AutoCAD</h3><p>Desenho técnico 2D e 3D, detalhamento e redesenho de peças e conjuntos, folhas com cotas e lista de material.</p></div>
+      </article>
+      <article class="cartao hab"><span class="hab-sigla">LT</span><h3>Lantek</h3><p>Programação de corte CNC: cadastro das peças detalhadas em CAD e aproveitamento de chapas.</p></article>
+      <article class="cartao hab"><span class="hab-sigla">TP</span><h3>TOTVS Protheus</h3><p>Ordens de produção e solicitações de compra, do cadastro ao acompanhamento.</p></article>
+      <article class="cartao hab"><span class="hab-sigla">XL</span><h3>Pacote Office</h3><p>Excel para listas de materiais, controles e automações em VBA; Word para relatórios e documentos técnicos.</p></article>
+    </div>
   </div>
 </section>
 
@@ -450,6 +486,7 @@ section{padding:72px 0 8px}
   function abrir(k){ultimoFoco=document.activeElement;visor.classList.add('aberto');document.body.style.overflow='hidden';mostrar(k);document.getElementById('v-fechar').focus()}
   function fechar(){visor.classList.remove('aberto');document.body.style.overflow='';if(ultimoFoco)ultimoFoco.focus()}
   document.querySelectorAll('.folha').forEach(b=>b.addEventListener('click',()=>abrir(+b.dataset.i)));
+  document.querySelectorAll('[data-desenho]').forEach(b=>b.addEventListener('click',()=>abrir(+b.dataset.desenho)));
   document.getElementById('v-fechar').onclick=fechar;
   document.getElementById('v-ant').onclick=()=>mostrar(i-1);
   document.getElementById('v-prox').onclick=()=>mostrar(i+1);
